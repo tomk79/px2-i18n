@@ -260,7 +260,7 @@ return call_user_func( function(){
 		)).')' ,
 
 		// カスタムサイトマップオブジェクトを生成して登録する
-		'proj\site::initialize()',
+		'tomk79\\pickles2\\px2I18n\\site::initialize()',
 	);
 
 	$devices = array();
@@ -483,7 +483,7 @@ return call_user_func( function(){
 	@$conf->plugins->px2dt->guieditor->custom_fields = array(
 		'text'=>array(
 			'backend'=>array(
-				'class' => 'proj\\fields\\multilangText\\text',
+				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\text',
 				'require' => '../../../../fields/multilang_text/backend/text.js',
 			),
 			'frontend'=>array(
@@ -497,7 +497,7 @@ return call_user_func( function(){
 		),
 		'multitext'=>array(
 			'backend'=>array(
-				'class' => 'proj\\fields\\multilangSummernote\\summernote',
+				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\summernote',
 				'require' => '../../../../fields/multilang_summernote/backend/summernote.js',
 			),
 			'frontend'=>array(

@@ -28,13 +28,19 @@
                             "main": {
                                 "src": "テストのための見出しです。",
                                 "langs": {
-                                    "en": "Heading for test."
+                                    "en": "Heading for test.",
+                                    "zh-CN": "",
+                                    "zh-TW": "",
+                                    "ko": ""
                                 }
                             },
                             "sub": {
                                 "src": "これは副見出しです。",
                                 "langs": {
-                                    "en": "This is a sub heading."
+                                    "en": "This is a sub heading.",
+                                    "zh-CN": "",
+                                    "zh-TW": "",
+                                    "ko": ""
                                 }
                             }
                         },

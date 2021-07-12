@@ -1,5 +1,5 @@
 <?php
-namespace proj;
+namespace tomk79\pickles2\px2I18n;
 class site extends \picklesFramework2\site{
 
 	private $px;

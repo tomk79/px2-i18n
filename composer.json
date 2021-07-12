@@ -25,11 +25,16 @@
         "tomk79/px2-scss": "^0.1.0"
     },
     "autoload": {
-        "files": [
-            "php/site.php",
-            "fields/multilang_summernote/backend/summernote.php",
-            "fields/multilang_text/backend/text.php"
-        ]
+        "psr-4": {
+            "tomk79\\pickles2\\px2I18n\\": [
+                "php/"
+            ],
+            "tomk79\\pickles2\\px2I18n\\fields\\": [
+                "fields/multilang_text/backend/",
+                "fields/multilang_multitext/backend/",
+                "fields/multilang_summernote/backend/"
+            ]
+        }
     },
     "extra": {
         "px2package": []

@@ -1,5 +1,5 @@
 <?php
-namespace proj\fields\multilangText;
+namespace tomk79\pickles2\px2I18n\fields;
 class text extends \broccoliHtmlEditor\fieldBase{
 
     private $broccoli;
