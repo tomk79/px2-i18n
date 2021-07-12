@@ -13,6 +13,37 @@ let packageJson = require(__dirname+'/package.json');
 
 
 
+// multilangMultitextEditor フィールド を処理
+gulp.task('multilangMultitextEditor:js', function(){
+	return webpackStream({
+		mode: 'production',
+		entry: "./src_gulp/fields/multilang_multitext/multitext.js",
+		output: {
+			filename: "multitext.js"
+		},
+		module:{
+			rules:[
+				{
+					test:/\.twig$/,
+					use:['twig-loader']
+				}
+			]
+		}
+	}, webpack)
+		.pipe(plumber())
+		.pipe(gulp.dest( './fields/multilang_multitext/' ))
+	;
+});
+gulp.task('multilangMultitextEditor:css', function(){
+	return gulp.src(["./src_gulp/fields/multilang_multitext/multitext.css"])
+		.pipe(plumber())
+		.pipe(concat('multitext.css'))
+		.pipe(gulp.dest( './fields/multilang_multitext/' ))
+	;
+});
+
+
+
 // multilangSummernoteEditor フィールド を処理
 gulp.task('multilangSummernoteEditor:js', function(){
 	return webpackStream({
@@ -74,6 +105,8 @@ gulp.task('multilangText:css', function(){
 
 
 let _tasks = gulp.parallel(
+	'multilangMultitextEditor:js',
+	'multilangMultitextEditor:css',
 	'multilangSummernoteEditor:js',
 	'multilangSummernoteEditor:css',
 	'multilangText:js',
