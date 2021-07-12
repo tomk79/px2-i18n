@@ -15,10 +15,22 @@ let packageJson = require(__dirname+'/package.json');
 
 // multilangSummernoteEditor フィールド を処理
 gulp.task('multilangSummernoteEditor:js', function(){
-	return gulp.src(["./src_gulp/fields/multilang_summernote/summernote.js"])
+	return webpackStream({
+		mode: 'production',
+		entry: "./src_gulp/fields/multilang_summernote/summernote.js",
+		output: {
+			filename: "summernote.js"
+		},
+		module:{
+			rules:[
+				{
+					test:/\.twig$/,
+					use:['twig-loader']
+				}
+			]
+		}
+	}, webpack)
 		.pipe(plumber())
-		.pipe(browserify({}))
-		.pipe(concat('summernote.js'))
 		.pipe(gulp.dest( './fields/multilang_summernote/' ))
 	;
 });
@@ -33,10 +45,22 @@ gulp.task('multilangSummernoteEditor:css', function(){
 
 // multilangText フィールド を処理
 gulp.task('multilangText:js', function(){
-	return gulp.src(["./src_gulp/fields/multilang_text/text.js"])
+	return webpackStream({
+		mode: 'production',
+		entry: "./src_gulp/fields/multilang_text/text.js",
+		output: {
+			filename: "text.js"
+		},
+		module:{
+			rules:[
+				{
+					test:/\.twig$/,
+					use:['twig-loader']
+				}
+			]
+		}
+	}, webpack)
 		.pipe(plumber())
-		.pipe(browserify({}))
-		.pipe(concat('text.js'))
 		.pipe(gulp.dest( './fields/multilang_text/' ))
 	;
 });

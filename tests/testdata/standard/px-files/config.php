@@ -484,10 +484,10 @@ return call_user_func( function(){
 		'text'=>array(
 			'backend'=>array(
 				'class' => 'proj\\fields\\multilangText\\text',
-				'require' => '../px-files/fields/multilang_text/backend/text.js',
+				'require' => '../../../../fields/multilang_text/backend/text.js',
 			),
 			'frontend'=>array(
-				'dir' => '../px-files/fields/multilang_text/',
+				'dir' => '../../../../fields/multilang_text/',
 				'file' => array(
 					'text.css',
 					'text.js'
@@ -498,10 +498,10 @@ return call_user_func( function(){
 		'multitext'=>array(
 			'backend'=>array(
 				'class' => 'proj\\fields\\multilangSummernote\\summernote',
-				'require' => '../px-files/fields/multilang_summernote/backend/summernote.js',
+				'require' => '../../../../fields/multilang_summernote/backend/summernote.js',
 			),
 			'frontend'=>array(
-				'dir' => '../px-files/fields/multilang_summernote/',
+				'dir' => '../../../../fields/multilang_summernote/',
 				'file' => array(
 					'summernote.css',
 					'summernote.js',
