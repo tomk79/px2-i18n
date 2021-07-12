@@ -1,7 +1,16 @@
 let gulp = require('gulp');
-let plumber = require("gulp-plumber");//コンパイルエラーが起きても watch を抜けないようになる
-let concat  = require('gulp-concat');
-let browserify = require("gulp-browserify");//NodeJSのコードをブラウザ向けコードに変換
+let webpack = require('webpack');
+let webpackStream = require('webpack-stream');
+let browserify = require("gulp-browserify");
+let sass = require('gulp-sass');
+let autoprefixer = require("gulp-autoprefixer");
+let minifyCss = require('gulp-minify-css');
+let uglify = require("gulp-uglify");
+let concat = require('gulp-concat');
+let plumber = require("gulp-plumber");
+let rename = require("gulp-rename");
+let packageJson = require(__dirname+'/package.json');
+
 
 
 // multilangSummernoteEditor フィールド を処理
