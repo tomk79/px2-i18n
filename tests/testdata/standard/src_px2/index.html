@@ -1,0 +1,58 @@
+<div class="px2-lp-container" style="padding-top:3rem; background-color: #f6f6f6;">
+	<div class="px2-lp-container__inner">
+<div class="px2-p px2-text-align-center"><div class="px2-image px2-p">
+<img src="./index_files/resources/welcome.svg" alt="Welcome ! to Pickles 2" /></div>
+<div class="px2-p">
+<?php if( $px->lang() == 'en' && 43 && true ){ ?><h2>Welcome to the world of Pickles 2!</h2><?php }elseif( $px->lang() == 'zh-CN' && 0 && true ){ ?><?php }elseif( $px->lang() == 'zh-TW' && 0 && true ){ ?><?php }elseif( $px->lang() == 'ko' && 0 && true ){ ?><?php }else{ ?><h2>ようこそ、 Pickles 2 の世界へ！</h2><?php }?>
+</div>
+</div>
+</div>
+</div>
+<div class="px2-lp-container">
+	<div class="px2-lp-container__inner">
+<div class="px2-h2">
+<h2><?php if( $px->lang() == 'en' && 9 ){ ?>Next Step<?php }elseif( $px->lang() == 'zh-CN' && 9 ){ ?>下一步<?php }elseif( $px->lang() == 'zh-TW' && 9 ){ ?>下一步<?php }elseif( $px->lang() == 'ko' && 13 ){ ?>다음 단계<?php }else{ ?>次のステップ<?php }?> <small><?php if( $px->lang() == 'en' && 0 ){ ?><?php }elseif( $px->lang() == 'zh-CN' && 0 ){ ?><?php }elseif( $px->lang() == 'zh-TW' && 0 ){ ?><?php }elseif( $px->lang() == 'ko' && 0 ){ ?><?php }else{ ?><?php }?></small></h2>
+</div>
+<div class="px2-grid">
+
+    <div class="px2-grid__col-1of3"><div class="px2-p">
+<?php if( $px->lang() == 'en' && 301 && true ){ ?><h3>Edit Sitemap</h3><p>First, we will register the entire site structure in a sitemap, which is a CSV file where each line is represented by a page.</p><p>The sitemap CSV is located in the following path.</p><pre style="line-height: 1.42857; font-weight: 400;"><code>./px-files/sitemaps/</code></pre><?php }elseif( $px->lang() == 'zh-CN' && 0 && true ){ ?><?php }elseif( $px->lang() == 'zh-TW' && 0 && true ){ ?><?php }elseif( $px->lang() == 'ko' && 291 && true ){ ?><h3>사이트 맵을 편집합니다</h3><p>소개 사이트 전체 구조를 사이트 맵에 등록합니다. 1 행이 한 페이지에 표현되는 CSV 형식의 파일입니다.</p><p>사이트 맵 CSV는 다음 경로에 있습니다.<br></p><pre><code>./px-files/sitemaps/</code></pre><?php }else{ ?><h3>サイトマップを編集します</h3>
+<p>はじめに、サイト全体の構造をサイトマップに登録します。1行が1ページで表現されるCSV形式のファイルです。</p>
+<p>サイトマップCSVは次のパスに置かれています。</p>
+<pre><code>./px-files/sitemaps/
+</code></pre>
+<?php }?>
+</div>
+</div>
+
+    <div class="px2-grid__col-1of3"><div class="px2-p">
+<?php if( $px->lang() == 'en' && 193 && true ){ ?><h3>Edit the theme</h3><p>A theme is a PHP template that generates HTML source outside the content area.</p><p>It is located in the following path.</p><pre><code>./px-files/themes/</code></pre><?php }elseif( $px->lang() == 'zh-CN' && 0 && true ){ ?><?php }elseif( $px->lang() == 'zh-TW' && 0 && true ){ ?><?php }elseif( $px->lang() == 'ko' && 0 && true ){ ?><?php }else{ ?><h3>テーマを編集します</h3>
+<p>テーマは、コンテンツエリア以外のHTMLソースを生成するPHPテンプレートです。</p>
+<p>次のパスに置かれています。</p>
+<pre><code>./px-files/themes/
+</code></pre>
+<?php }?>
+</div>
+</div>
+
+    <div class="px2-grid__col-1of3"><div class="px2-p">
+<?php if( $px->lang() == 'en' && 416 && true ){ ?><h3>Edit the content</h3><p>Content is a simple HTML file that contains only the source of the content area.<br>Create an HTML file in the path registered in the path field of the site map.<br></p><p>You can see the source of this page you are looking at by opening&nbsp;<code>/index.html</code>&nbsp;in a text editor.<br>Please delete or overwrite this page as well to replace it with the top page of your site.</p><?php }elseif( $px->lang() == 'zh-CN' && 0 && true ){ ?><?php }elseif( $px->lang() == 'zh-TW' && 0 && true ){ ?><?php }elseif( $px->lang() == 'ko' && 0 && true ){ ?><?php }else{ ?><h3>コンテンツを編集します</h3><p>コンテンツは、コンテンツエリアのソースだけが記述されたシンプルなHTMLファイルです。<br />サイトマップの path 欄に登録したパスにHTMLファイルを作成してください。<br /></p>
+<p>あなたがいま見ているこのページは、テキストエディタで <code>/index.html</code> を開くとソースを確認できます。<br />このページも、削除や上書きしてあなたのサイトのトップページに置き換えてください。<br /></p><?php }?>
+</div>
+</div>
+
+</div>
+<div class="px2-p">
+<?php if( $px->lang() == 'en' && 310 && true ){ ?><h3>Publish</h3><p>Once your site is complete, you can export it to static HTML as is.<br>Publish with the following command:</p><pre><code>$ php ./.px_execute.php /?PX=publish.run
+</code></pre><p>After a while, a static HTML file will be generated in the next path.</p><pre><code>./px-files/dist/</code></pre><?php }elseif( $px->lang() == 'zh-CN' && 0 && true ){ ?><?php }elseif( $px->lang() == 'zh-TW' && 0 && true ){ ?><?php }elseif( $px->lang() == 'ko' && 0 && true ){ ?><?php }else{ ?><h3>パブリッシュします</h3>
+<p>サイトができあがったら、そのまま静的なHTMLに書き出すことができます。<br>
+次のコマンドで、パブリッシュを実行します。</p>
+<pre><code>$ php ./.px_execute.php /?PX=publish.run
+</code></pre>
+<p>しばらくすると、次のパスに、静的なHTMLファイルが生成されます。</p>
+<pre><code>./px-files/dist/
+</code></pre>
+<?php }?>
+</div>
+</div>
+</div>

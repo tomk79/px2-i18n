@@ -1,0 +1,4 @@
+<?php
+	/* UTF-8 */
+	return array(0=>array('path'=>'/sample_pages/samples/dynamic_path/','path_original'=>'/sample_pages/samples/dynamic_path/{*}','id'=>':auto_page_id.22','preg'=>'/^\\/sample_pages\\/samples\\/dynamic_path\\/(.*?)$/s','pattern_map'=>array(0=>'')));
+?>

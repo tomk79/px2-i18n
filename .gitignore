@@ -1,6 +1,23 @@
-composer.phar
-/vendor/
+.DS_Store
+Thumbs.db
+.~*.csv#
+~$*
+!.gitkeep
 
-# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
+# composer
+/vendor/
+composer.phar
+composer.lock
+
+# pickles2
+px-files/_sys/ram/
+!px-files/_sys/ram/applock/.gitkeep
+!px-files/_sys/ram/caches/.gitkeep
+!px-files/_sys/ram/data/.gitkeep
+!px-files/_sys/ram/publish/.gitkeep
+src_px2/common/px_resources/
+!src_px2/common/px_resources/.gitkeep
+
+# npm
+/node_modules/
+package-lock.json
