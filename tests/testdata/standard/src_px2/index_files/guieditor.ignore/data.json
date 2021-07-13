@@ -141,27 +141,53 @@
                                                             "modId": "local:basics/ml_multitext_1l",
                                                             "fields": {
                                                                 "main": {
-                                                                    "src": "",
+                                                                    "src": "これは1行多言語マルチテキストです。",
                                                                     "editor": "markdown",
-                                                                    "langs": []
+                                                                    "langs": {
+                                                                        "en": "This is a 1 liner Multi Text.",
+                                                                        "zh-CN": "",
+                                                                        "zh-TW": "",
+                                                                        "ko": ""
+                                                                    }
                                                                 },
-                                                                "paragraph": "px2-p",
-                                                                "text-align": "",
-                                                                "font-size": ""
-                                                            }
+                                                                "paragraph": {
+                                                                    "src": "px2-p"
+                                                                },
+                                                                "text-align": {
+                                                                    "src": ""
+                                                                },
+                                                                "font-size": {
+                                                                    "src": ""
+                                                                }
+                                                            },
+                                                            "anchor": "",
+                                                            "dec": ""
                                                         },
                                                         {
                                                             "modId": "local:basics/ml_multitext",
                                                             "fields": {
                                                                 "main": {
-                                                                    "src": "",
+                                                                    "src": "多言語マルチテキストです。",
                                                                     "editor": "markdown",
-                                                                    "langs": []
+                                                                    "langs": {
+                                                                        "en": "This is a Multilang Multitext.",
+                                                                        "zh-CN": "",
+                                                                        "zh-TW": "",
+                                                                        "ko": ""
+                                                                    }
                                                                 },
-                                                                "paragraph": "px2-p",
-                                                                "text-align": "",
-                                                                "font-size": ""
-                                                            }
+                                                                "paragraph": {
+                                                                    "src": "px2-p"
+                                                                },
+                                                                "text-align": {
+                                                                    "src": ""
+                                                                },
+                                                                "font-size": {
+                                                                    "src": ""
+                                                                }
+                                                            },
+                                                            "anchor": "",
+                                                            "dec": ""
                                                         },
                                                         {
                                                             "modId": "std-document:basics/text",

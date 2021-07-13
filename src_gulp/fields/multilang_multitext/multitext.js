@@ -132,42 +132,49 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 					})
 				;
 				$rtn.append( $formElm );
-				mod.aceEditor = ace.edit( $formElm.get(0) );
+				var aceEditor = ace.edit( $formElm.get(0) );
 				// Ace Snippets - https://ace.c9.io/build/kitchen-sink.html
-				mod.aceEditor.setFontSize(16);
-				mod.aceEditor.getSession().setUseWrapMode(true);// Ace 自然改行
-				mod.aceEditor.setShowInvisibles(true);// Ace 不可視文字の可視化
-				mod.aceEditor.$blockScrolling = Infinity;
-				mod.aceEditor.setTheme("ace/theme/github");
-				mod.aceEditor.getSession().setMode("ace/mode/html");
+				aceEditor.setFontSize(16);
+				aceEditor.getSession().setUseWrapMode(true);// Ace 自然改行
+				aceEditor.setShowInvisibles(true);// Ace 不可視文字の可視化
+				aceEditor.$blockScrolling = Infinity;
+				aceEditor.setTheme("ace/theme/github");
+				aceEditor.getSession().setMode("ace/mode/html");
 
 				if( data.editor == 'text' ){
-					mod.aceEditor.setTheme("ace/theme/katzenmilch");
-					mod.aceEditor.getSession().setMode("ace/mode/plain_text");
+					aceEditor.setTheme("ace/theme/katzenmilch");
+					aceEditor.getSession().setMode("ace/mode/plain_text");
 				}else if( data.editor == 'markdown' ){
-					mod.aceEditor.setTheme("ace/theme/github");
-					mod.aceEditor.getSession().setMode("ace/mode/markdown");
+					aceEditor.setTheme("ace/theme/github");
+					aceEditor.getSession().setMode("ace/mode/markdown");
 				}else{
-					mod.aceEditor.setTheme("ace/theme/monokai");
-					mod.aceEditor.getSession().setMode("ace/mode/html");
+					aceEditor.setTheme("ace/theme/monokai");
+					aceEditor.getSession().setMode("ace/mode/html");
 				}
 
 				// 編集中のコンテンツ量に合わせて、
 				// AceEditor編集欄のサイズを広げる
 				var updateAceHeight = function() {
 					var h =
-						mod.aceEditor.getSession().getScreenLength()
-						* mod.aceEditor.renderer.lineHeight
-						+ mod.aceEditor.renderer.scrollBar.getWidth()
+						aceEditor.getSession().getScreenLength()
+						* aceEditor.renderer.lineHeight
+						+ aceEditor.renderer.scrollBar.getWidth()
 					;
-					if( h < mod.aceEditor.renderer.lineHeight * rows ){
-						h = mod.aceEditor.renderer.lineHeight * rows;
+					if( h < aceEditor.renderer.lineHeight * rows ){
+						h = aceEditor.renderer.lineHeight * rows;
 					}
 					$formElm.eq(0).height(h.toString() + "px");
-					mod.aceEditor.resize();
+					aceEditor.resize();
 				};
-				mod.aceEditor.getSession().on('change', updateAceHeight);
+				aceEditor.getSession().on('change', updateAceHeight);
 				setTimeout(updateAceHeight, 200);
+
+				if( lang ){
+					mod.aceEditorLangs = mod.aceEditorLangs || {};
+					mod.aceEditorLangs[lang] = aceEditor;
+				}else{
+					mod.aceEditor = aceEditor;
+				}
 
 			}else{
 				$formElm = $('<textarea class="form-control">')
@@ -208,6 +215,21 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 						}else{
 							mod.aceEditor.setTheme("ace/theme/monokai");
 							mod.aceEditor.getSession().setMode("ace/mode/html");
+						}
+						if( mod.aceEditorLangs && Object.keys(mod.aceEditorLangs).length ){
+							for( var lang in mod.aceEditorLangs ){
+								if( val == 'text' ){
+									mod.aceEditorLangs[lang].setTheme("ace/theme/katzenmilch");
+									mod.aceEditorLangs[lang].getSession().setMode("ace/mode/plain_text");
+								}else if( val == 'markdown' ){
+									mod.aceEditorLangs[lang].setTheme("ace/theme/github");
+									mod.aceEditorLangs[lang].getSession().setMode("ace/mode/markdown");
+								}else{
+									mod.aceEditorLangs[lang].setTheme("ace/theme/monokai");
+									mod.aceEditorLangs[lang].getSession().setMode("ace/mode/html");
+								}
+							}
+
 						}
 					});
 				}
@@ -313,14 +335,14 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 		}
 
 		if( $elm.find('[data-lang=editor-default-lang] input[type=text]').length ){
-			data.src = $elm.find('[data-lang=editor-default-lang] input[type=text]').val();
+			rtn.src = $elm.find('[data-lang=editor-default-lang] input[type=text]').val();
 		}else if( editorLib == 'ace' && mod.aceEditor ){
-			data.src = mod.aceEditor.getValue();
+			rtn.src = mod.aceEditor.getValue();
 		}else{
-			data.src = $elm.find('[data-lang=editor-default-lang] textarea').val();
+			rtn.src = $elm.find('[data-lang=editor-default-lang] textarea').val();
 		}
-		data.src = JSON.parse( JSON.stringify(data.src) );
-		data.editor = $elm.find('input[type=radio][name=editor-'+mod.name+']:checked').val();
+		rtn.src = JSON.parse( JSON.stringify(rtn.src) );
+		rtn.editor = $elm.find('[data-lang=editor-default-lang] input[type=radio][name=editor-'+mod.name+']:checked').val();
 
 
 		// 副言語
@@ -329,11 +351,12 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 				var currentLang = mod.subLangs[idx];
 
 				if( $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').length ){
-					data.src = $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').val();
+					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').val();
 				}else if( editorLib == 'ace' && mod.aceEditor ){
-					data.src = mod.aceEditor.getValue();
+					mod.aceEditorLangs = mod.aceEditorLangs || {};
+					rtn.langs[currentLang] = mod.aceEditorLangs[currentLang].getValue();
 				}else{
-					data.src = $elm.find('[data-lang=editor-lang-'+currentLang+'] textarea').val();
+					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] textarea').val();
 				}
 			}
 		}

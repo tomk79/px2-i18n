@@ -20,32 +20,199 @@
                         "fields": []
                     },
                     {
-                        "modId": "std-document:headings/hx-simple",
+                        "modId": "std-document:grids/grid",
                         "fields": {
-                            "hx": {
-                                "src": "2"
-                            },
-                            "main": {
-                                "src": "テストのための見出しです。",
-                                "langs": {
-                                    "en": "Heading for test.",
-                                    "zh-CN": "",
-                                    "zh-TW": "",
-                                    "ko": ""
+                            "col": [
+                                {
+                                    "modId": "std-document:grids/grid",
+                                    "fields": {
+                                        "column-width": "1of3",
+                                        "main": [
+                                            {
+                                                "modId": "local:basics/ml_multitext_1l",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "これは1行多言語マルチテキストです。",
+                                                        "editor": "markdown",
+                                                        "langs": {
+                                                            "en": "This is a 1 liner Multi Text.",
+                                                            "zh-CN": "",
+                                                            "zh-TW": "",
+                                                            "ko": ""
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            },
+                                            {
+                                                "modId": "local:basics/ml_multitext",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "多言語マルチテキストです。",
+                                                        "editor": "markdown",
+                                                        "langs": {
+                                                            "en": "This is a Multilang Multitext.",
+                                                            "zh-CN": "",
+                                                            "zh-TW": "",
+                                                            "ko": ""
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            }
+                                        ]
+                                    },
+                                    "subModName": "col",
+                                    "anchor": "",
+                                    "dec": ""
+                                },
+                                {
+                                    "modId": "std-document:grids/grid",
+                                    "fields": {
+                                        "column-width": "1of3",
+                                        "main": [
+                                            {
+                                                "modId": "local:basics/ml_text_1l",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "1行多言語プレーンテキストです。",
+                                                        "langs": {
+                                                            "en": "This is a Multilang Plain Text.",
+                                                            "zh-CN": "",
+                                                            "zh-TW": "",
+                                                            "ko": ""
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            },
+                                            {
+                                                "modId": "local:basics/ml_text",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "多言語プレーンテキストです。",
+                                                        "editor": "",
+                                                        "langs": {
+                                                            "en": "This is a multilang plain text.",
+                                                            "zh-CN": "",
+                                                            "zh-TW": "",
+                                                            "ko": ""
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            }
+                                        ]
+                                    },
+                                    "subModName": "col",
+                                    "anchor": "",
+                                    "dec": ""
+                                },
+                                {
+                                    "modId": "std-document:grids/grid",
+                                    "fields": {
+                                        "column-width": "1of3",
+                                        "main": [
+                                            {
+                                                "modId": "local:basics/ml_summernote_1l",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "1行多言語サマーノートです。",
+                                                        "editor": "markdown",
+                                                        "langs": {
+                                                            "en": "This is a 1 liner Summernote.",
+                                                            "zh-CN": "",
+                                                            "zh-TW": "",
+                                                            "ko": ""
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            },
+                                            {
+                                                "modId": "local:basics/ml_summernote",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "多言語サマーノートです。",
+                                                        "editor": "",
+                                                        "langs": {
+                                                            "en": "<p>This is a Multilang Summernote.</p>",
+                                                            "zh-CN": "<p><br></p>",
+                                                            "zh-TW": "<p><br></p>",
+                                                            "ko": "<p><br></p>"
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            }
+                                        ]
+                                    },
+                                    "subModName": "col",
+                                    "anchor": "",
+                                    "dec": ""
                                 }
-                            },
-                            "sub": {
-                                "src": "これは副見出しです。",
-                                "langs": {
-                                    "en": "This is a sub heading.",
-                                    "zh-CN": "",
-                                    "zh-TW": "",
-                                    "ko": ""
-                                }
-                            }
-                        },
-                        "anchor": "",
-                        "dec": ""
+                            ]
+                        }
                     },
                     {
                         "modId": "std-document:basics/text",
