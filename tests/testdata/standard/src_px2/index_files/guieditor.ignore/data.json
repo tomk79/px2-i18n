@@ -138,7 +138,7 @@
                                                     "column-width": "1of3",
                                                     "main": [
                                                         {
-                                                            "modId": "local:basics/ml_multitext",
+                                                            "modId": "local:basics/ml_multitext_1l",
                                                             "fields": {
                                                                 "main": {
                                                                     "src": "",
@@ -151,7 +151,7 @@
                                                             }
                                                         },
                                                         {
-                                                            "modId": "local:basics/ml_text",
+                                                            "modId": "local:basics/ml_multitext",
                                                             "fields": {
                                                                 "main": {
                                                                     "src": "",
@@ -201,6 +201,57 @@
                                                     "column-width": "1of3",
                                                     "main": [
                                                         {
+                                                            "modId": "local:basics/ml_text_1l",
+                                                            "fields": {
+                                                                "main": {
+                                                                    "src": "1行多言語プレーンテキストです。",
+                                                                    "langs": {
+                                                                        "en": "This is a Multilang Plain Text.",
+                                                                        "zh-CN": "",
+                                                                        "zh-TW": "",
+                                                                        "ko": ""
+                                                                    }
+                                                                },
+                                                                "paragraph": {
+                                                                    "src": "px2-p"
+                                                                },
+                                                                "text-align": {
+                                                                    "src": ""
+                                                                },
+                                                                "font-size": {
+                                                                    "src": ""
+                                                                }
+                                                            },
+                                                            "anchor": "",
+                                                            "dec": ""
+                                                        },
+                                                        {
+                                                            "modId": "local:basics/ml_text",
+                                                            "fields": {
+                                                                "main": {
+                                                                    "src": "多言語プレーンテキストです。",
+                                                                    "editor": "",
+                                                                    "langs": {
+                                                                        "en": "This is a multilang plain text.",
+                                                                        "zh-CN": "",
+                                                                        "zh-TW": "",
+                                                                        "ko": ""
+                                                                    }
+                                                                },
+                                                                "paragraph": {
+                                                                    "src": "px2-p"
+                                                                },
+                                                                "text-align": {
+                                                                    "src": ""
+                                                                },
+                                                                "font-size": {
+                                                                    "src": ""
+                                                                }
+                                                            },
+                                                            "anchor": "",
+                                                            "dec": ""
+                                                        },
+                                                        {
                                                             "modId": "std-document:basics/text",
                                                             "fields": {
                                                                 "main": {
@@ -234,6 +285,58 @@
                                                 "fields": {
                                                     "column-width": "1of3",
                                                     "main": [
+                                                        {
+                                                            "modId": "local:basics/ml_summernote_1l",
+                                                            "fields": {
+                                                                "main": {
+                                                                    "src": "1行多言語サマーノートです。",
+                                                                    "editor": "markdown",
+                                                                    "langs": {
+                                                                        "en": "This is a 1 liner Summernote.",
+                                                                        "zh-CN": "",
+                                                                        "zh-TW": "",
+                                                                        "ko": ""
+                                                                    }
+                                                                },
+                                                                "paragraph": {
+                                                                    "src": "px2-p"
+                                                                },
+                                                                "text-align": {
+                                                                    "src": ""
+                                                                },
+                                                                "font-size": {
+                                                                    "src": ""
+                                                                }
+                                                            },
+                                                            "anchor": "",
+                                                            "dec": ""
+                                                        },
+                                                        {
+                                                            "modId": "local:basics/ml_summernote",
+                                                            "fields": {
+                                                                "main": {
+                                                                    "src": "多言語サマーノートです。",
+                                                                    "editor": "",
+                                                                    "langs": {
+                                                                        "en": "<p>This is a Multilang Summernote.</p>",
+                                                                        "zh-CN": "<p><br></p>",
+                                                                        "zh-TW": "<p><br></p>",
+                                                                        "ko": "<p><br></p>"
+                                                                    }
+                                                                },
+                                                                "paragraph": {
+                                                                    "src": "px2-p"
+                                                                },
+                                                                "text-align": {
+                                                                    "src": ""
+                                                                },
+                                                                "font-size": {
+                                                                    "src": ""
+                                                                }
+                                                            },
+                                                            "anchor": "",
+                                                            "dec": ""
+                                                        },
                                                         {
                                                             "modId": "std-document:basics/text",
                                                             "fields": {

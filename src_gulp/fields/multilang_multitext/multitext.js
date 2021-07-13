@@ -1,6 +1,12 @@
 window.BroccoliFieldMultilangMultitext = function(broccoli){
 	var $ = require('jquery');
-	var isGlobalJQuery = ( window.jQuery ? true : false );
+	var editorLib = null;
+	try {
+		if(window.ace){
+			editorLib = 'ace';
+		}
+	} catch (e) {
+	}
 
 	function htmlspecialchars(text){
 		text = text.split(/\&/g).join('&amp;');
@@ -90,26 +96,22 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 		}
 
 		function mkInputField(elm, src, lang){
-			var $div = $('<div>');
-			$(elm).html($div);
+			var $rtn = $('<div>'),
+				$formElm
+			;
+			$(elm).html($rtn);
 
 			var fieldName = mod.name;
 
 			if( lang ){
 				fieldName += '--'+lang;
-				$div.append($('<p>').text(lang).css({'font-weight':'bold'}));
+				$rtn.append($('<p>').text(lang).css({'font-weight':'bold'}));
 			}
-
-
-
-			var $rtn = $('<div>'),
-				$formElm
-			;
 
 			if( rows == 1 ){
 				$formElm = $('<input type="text" class="form-control">')
 					.attr({
-						"name": mod.name
+						"name": fieldName
 					})
 					.val(src)
 					.css({'width':'100%'})
@@ -170,7 +172,7 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 			}else{
 				$formElm = $('<textarea class="form-control">')
 					.attr({
-						"name": mod.name,
+						"name": fieldName,
 						"rows": rows
 					})
 					.css({
@@ -186,15 +188,15 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 			if( !lang ){
 				$rtn
 					.append( $('<p>')
-						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+php.htmlspecialchars(mod.name)+'" value="" /> HTML</label></span>'))
-						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+php.htmlspecialchars(mod.name)+'" value="text" /> テキスト</label></span>'))
-						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+php.htmlspecialchars(mod.name)+'" value="markdown" /> Markdown</label></span>'))
+						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+htmlspecialchars(fieldName)+'" value="" /> HTML</label></span>'))
+						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+htmlspecialchars(fieldName)+'" value="text" /> テキスト</label></span>'))
+						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+htmlspecialchars(fieldName)+'" value="markdown" /> Markdown</label></span>'))
 					)
 				;
-				$rtn.find('input[type=radio][name=editor-'+mod.name+'][value="'+data.editor+'"]').attr({'checked':'checked'});
+				$rtn.find('input[type=radio][name=editor-'+fieldName+'][value="'+data.editor+'"]').attr({'checked':'checked'});
 
 				if( editorLib == 'ace' && mod.aceEditor ){
-					$rtn.find('input[type=radio][name=editor-'+mod.name+']').on('change', function(){
+					$rtn.find('input[type=radio][name=editor-'+fieldName+']').on('change', function(){
 						var $this = $(this);
 						var val = $this.val();
 						if( val == 'text' ){
@@ -286,6 +288,11 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 	 * エディタUIで編集した内容を保存 (Client Side)
 	 */
 	this.saveEditorContent = function( elm, data, mod, callback, options ){
+		// console.log($dom.html());
+		if(typeof(data) !== typeof({})){
+			data = {};
+		}
+
 		options = options || {};
 		options.message = options.message || function(msg){};//ユーザーへのメッセージテキストを送信
 		var rtn = {};
@@ -305,26 +312,15 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 			rtn.langs = {};
 		}
 
-		if( rows == 1 && $elm.find('[data-lang=editor-default-lang] input[type=text]').length ){
-			// デフォルト言語
-			rtn.src = $elm.find('[data-lang=editor-default-lang] input[type=text]').eq(0).val();
-			rtn.editor = $elm.find('[data-lang=editor-default-lang] input[type=radio][name=editor-'+mod.name+']:checked').eq(0).val();
-
-		}else if( isGlobalJQuery ){
-			// jQuery がある場合
-
-			// デフォルト言語
-			var $targetElm = window.jQuery(elm).find('[data-lang=editor-default-lang] .broccoli-field-summernote').eq(0);
-				// TODO: 隠蔽したい。
-
-			rtn.src = $targetElm.summernote('code');
-
+		if( $elm.find('[data-lang=editor-default-lang] input[type=text]').length ){
+			data.src = $elm.find('[data-lang=editor-default-lang] input[type=text]').val();
+		}else if( editorLib == 'ace' && mod.aceEditor ){
+			data.src = mod.aceEditor.getValue();
 		}else{
-			// jQuery がない場合
-
-			// デフォルト言語
-			rtn.src = $elm.find('[data-lang=editor-default-lang] .broccoli-field-summernote textarea').eq(0).val();
+			data.src = $elm.find('[data-lang=editor-default-lang] textarea').val();
 		}
+		data.src = JSON.parse( JSON.stringify(data.src) );
+		data.editor = $elm.find('input[type=radio][name=editor-'+mod.name+']:checked').val();
 
 
 		// 副言語
@@ -332,24 +328,12 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 			for(var idx = 0; idx < mod.subLangs.length; idx ++ ){
 				var currentLang = mod.subLangs[idx];
 
-				if( rows == 1 && $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').length ){
-					// 副言語
-					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').eq(0).val();
-
-				}else if( isGlobalJQuery ){
-					// jQuery がある場合
-
-					// 副言語
-					var $targetElm = window.jQuery(elm).find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-summernote').eq(0);
-						// TODO: 隠蔽したい。
-
-					rtn.langs[currentLang] = $targetElm.summernote('code');
-
+				if( $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').length ){
+					data.src = $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').val();
+				}else if( editorLib == 'ace' && mod.aceEditor ){
+					data.src = mod.aceEditor.getValue();
 				}else{
-					// jQuery がない場合
-
-					// 副言語
-					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-summernote textarea').eq(0).val();
+					data.src = $elm.find('[data-lang=editor-lang-'+currentLang+'] textarea').val();
 				}
 			}
 		}

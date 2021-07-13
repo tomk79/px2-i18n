@@ -14,10 +14,19 @@
  * module: local:basics/ml_multitext
  */
   /**
+ * module: local:basics/ml_multitext_1l
+ */
+  /**
  * module: local:basics/ml_summernote
  */
   /**
+ * module: local:basics/ml_summernote_1l
+ */
+  /**
  * module: local:basics/ml_text
+ */
+  /**
+ * module: local:basics/ml_text_1l
  */
   /**
  * module: lp:containers/container
@@ -406,6 +415,36 @@
 }
 .contents .px2-tabs__content.px2-tabs--active {
   display: block;
+}
+.contents pre {
+  padding: 1em;
+  overflow: auto;
+}
+.contents pre code {
+  display: inline;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.contents pre {
+  padding: 1em;
+  overflow: auto;
+}
+.contents pre code {
+  display: inline;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.contents pre {
+  padding: 1em;
+  overflow: auto;
+}
+.contents pre code {
+  display: inline;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 .contents pre {
   padding: 1em;
