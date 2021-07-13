@@ -7,7 +7,13 @@ window.BroccoliFieldMultilangText = function(broccoli){
 	 */
 	this.normalizeData = function( fieldData, mode ){
 		// 編集画面用にデータを初期化。
-		var rtn = fieldData;
+		var rtn = {};
+		if( typeof(fieldData) === typeof({}) ){
+			rtn = fieldData;
+		}else if( typeof(fieldData) === typeof('') ){
+			rtn.src = fieldData;
+			rtn.editor = 'markdown';
+		}
 		if(!rtn || typeof(rtn) != typeof({})){
 			data = {
 				src: '',

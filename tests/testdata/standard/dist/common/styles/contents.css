@@ -11,7 +11,13 @@
  * module: interact:interactives/tabs
  */
   /**
- * module: local:sample/sample2
+ * module: local:basics/ml_multitext
+ */
+  /**
+ * module: local:basics/ml_summernote
+ */
+  /**
+ * module: local:basics/ml_text
  */
   /**
  * module: lp:containers/container
@@ -401,16 +407,35 @@
 .contents .px2-tabs__content.px2-tabs--active {
   display: block;
 }
-.contents .module_sample_sample2 {
-  margin: 1em auto;
-  padding: 20px;
-  background: #f6f6f6;
+.contents pre {
+  padding: 1em;
+  overflow: auto;
 }
-.contents .module_sample_sample2__select1 {
-  color: #f00;
+.contents pre code {
+  display: inline;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
-.contents .module_sample_sample2__select2 {
-  color: #00f;
+.contents pre {
+  padding: 1em;
+  overflow: auto;
+}
+.contents pre code {
+  display: inline;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.contents pre {
+  padding: 1em;
+  overflow: auto;
+}
+.contents pre code {
+  display: inline;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 .contents .px2-lp-container {
   width: 100%;

@@ -16,7 +16,13 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 	 */
 	this.normalizeData = function( fieldData, mode ){
 		// 編集画面用にデータを初期化。
-		var rtn = fieldData;
+		var rtn = {};
+		if( typeof(fieldData) === typeof({}) ){
+			rtn = fieldData;
+		}else if( typeof(fieldData) === typeof('') ){
+			rtn.src = fieldData;
+			rtn.editor = 'markdown';
+		}
 		if(!rtn || typeof(rtn) != typeof({})){
 			data = {
 				src: '',
@@ -62,9 +68,9 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 	this.mkEditor = function( mod, data, elm, callback ){
 		if(!data || typeof(data) != typeof({})){
 			data = {
-				src: '',
-				editor: '',
-				langs: {},
+				'src':'' + ( typeof(data) === typeof('') ? data : '' ),
+				'editor':'markdown',
+				'langs': {},
 			};
 		}
 
@@ -83,36 +89,6 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 			data.langs = {};
 		}
 
-		if( rows != 1 ){
-
-			switch( data.editor ){
-				case 'markdown':
-					var marked = require('marked');
-					marked.setOptions({
-						renderer: new marked.Renderer(),
-						gfm: true,
-						headerIds: false,
-						tables: true,
-						breaks: false,
-						pedantic: false,
-						sanitize: false,
-						smartLists: true,
-						smartypants: false,
-						xhtml: true
-					});
-					data.src = marked(data.src);
-					break;
-				case 'text':
-					// HTML特殊文字変換
-					data.src = htmlspecialchars(data.src);
-
-					// 改行コードは改行タグに変換
-					data.src = data.src.split(/\r\n|\r|\n/g).join('<br />');
-					break;
-			}
-		}
-
-
 		function mkInputField(elm, src, lang){
 			var $div = $('<div>');
 			$(elm).html($div);
@@ -125,63 +101,113 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 			}
 
 
+
+			var $rtn = $('<div>'),
+				$formElm
+			;
+
 			if( rows == 1 ){
-				var $formElm = $('<input type="text" class="form-control">')
+				$formElm = $('<input type="text" class="form-control">')
 					.attr({
-						"name": fieldName
+						"name": mod.name
 					})
 					.val(src)
 					.css({'width':'100%'})
 				;
-				$div.append( $formElm );
+				$rtn.append( $formElm );
 
-				if( !lang ){
-					$div
-						.append( $('<p>')
-							.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+htmlspecialchars(fieldName)+'" value="" /> HTML</label></span>'))
-							.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+htmlspecialchars(fieldName)+'" value="text" /> テキスト</label></span>'))
-							.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+htmlspecialchars(fieldName)+'" value="markdown" /> Markdown</label></span>'))
-						)
-					;
-					$div.find('input[type=radio][name=editor-'+fieldName+'][value="'+data.editor+'"]').attr({'checked':'checked'});
+			}else if( editorLib == 'ace' ){
+				$formElm = $('<div>')
+					.text(src)
+					.css({
+						'position': 'relative',
+						'width': '100%',
+						'height': 16 * rows,
+						'border': '1px solid #ccc',
+						'box-shadow': 'inset 0px 1px 1px rgba(0,0,0,0.075)',
+						'border-radius': '4px',
+						'overflow': 'hidden'
+					})
+				;
+				$rtn.append( $formElm );
+				mod.aceEditor = ace.edit( $formElm.get(0) );
+				// Ace Snippets - https://ace.c9.io/build/kitchen-sink.html
+				mod.aceEditor.setFontSize(16);
+				mod.aceEditor.getSession().setUseWrapMode(true);// Ace 自然改行
+				mod.aceEditor.setShowInvisibles(true);// Ace 不可視文字の可視化
+				mod.aceEditor.$blockScrolling = Infinity;
+				mod.aceEditor.setTheme("ace/theme/github");
+				mod.aceEditor.getSession().setMode("ace/mode/html");
+
+				if( data.editor == 'text' ){
+					mod.aceEditor.setTheme("ace/theme/katzenmilch");
+					mod.aceEditor.getSession().setMode("ace/mode/plain_text");
+				}else if( data.editor == 'markdown' ){
+					mod.aceEditor.setTheme("ace/theme/github");
+					mod.aceEditor.getSession().setMode("ace/mode/markdown");
+				}else{
+					mod.aceEditor.setTheme("ace/theme/monokai");
+					mod.aceEditor.getSession().setMode("ace/mode/html");
 				}
 
+				// 編集中のコンテンツ量に合わせて、
+				// AceEditor編集欄のサイズを広げる
+				var updateAceHeight = function() {
+					var h =
+						mod.aceEditor.getSession().getScreenLength()
+						* mod.aceEditor.renderer.lineHeight
+						+ mod.aceEditor.renderer.scrollBar.getWidth()
+					;
+					if( h < mod.aceEditor.renderer.lineHeight * rows ){
+						h = mod.aceEditor.renderer.lineHeight * rows;
+					}
+					$formElm.eq(0).height(h.toString() + "px");
+					mod.aceEditor.resize();
+				};
+				mod.aceEditor.getSession().on('change', updateAceHeight);
+				setTimeout(updateAceHeight, 200);
+
 			}else{
+				$formElm = $('<textarea class="form-control">')
+					.attr({
+						"name": mod.name,
+						"rows": rows
+					})
+					.css({
+						'width':'100%',
+						'height':'auto'
+					})
+					.val(src)
+				;
+				$rtn.append( $formElm );
 
-				var $summernote = $('<div>');
-				$summernote.addClass('broccoli-field-summernote');
-				$div.append(
-					$summernote
-				);
+			}
 
-				if( isGlobalJQuery ){
-					// jQuery がある場合
-					var $targetElm = window.jQuery(elm).find('.broccoli-field-summernote').eq(0);
-					$targetElm.summernote({
-						// TODO: 隠蔽したい。
-						placeholder: '',
-						tabsize: 2,
-						height: 90 + (18 * rows),
-						toolbar: [
-							['style', ['style']],
-							['font', ['bold', 'underline', 'clear']],
-							['color', ['color']],
-							['para', ['ul', 'ol', 'paragraph']],
-							['table', ['table']],
-							['insert', ['link', 'picture', 'video']],
-							['view', ['fullscreen', 'codeview', 'help']]
-						]
+			if( !lang ){
+				$rtn
+					.append( $('<p>')
+						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+php.htmlspecialchars(mod.name)+'" value="" /> HTML</label></span>'))
+						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+php.htmlspecialchars(mod.name)+'" value="text" /> テキスト</label></span>'))
+						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+php.htmlspecialchars(mod.name)+'" value="markdown" /> Markdown</label></span>'))
+					)
+				;
+				$rtn.find('input[type=radio][name=editor-'+mod.name+'][value="'+data.editor+'"]').attr({'checked':'checked'});
+
+				if( editorLib == 'ace' && mod.aceEditor ){
+					$rtn.find('input[type=radio][name=editor-'+mod.name+']').on('change', function(){
+						var $this = $(this);
+						var val = $this.val();
+						if( val == 'text' ){
+							mod.aceEditor.setTheme("ace/theme/katzenmilch");
+							mod.aceEditor.getSession().setMode("ace/mode/plain_text");
+						}else if( val == 'markdown' ){
+							mod.aceEditor.setTheme("ace/theme/github");
+							mod.aceEditor.getSession().setMode("ace/mode/markdown");
+						}else{
+							mod.aceEditor.setTheme("ace/theme/monokai");
+							mod.aceEditor.getSession().setMode("ace/mode/html");
+						}
 					});
-					$targetElm.summernote('code', src);
-				}else{
-					// jQuery がない場合
-					console.error('broccoli-field-summernoteフィールドで Summernote (WYSIWYG)を利用するには、グローバルスコープに jQuery がロードされている必要があります。');
-					$(elm).find('.broccoli-field-summernote').append( $('<textarea class="form-control">')
-						.val(src)
-						.attr({
-							"rows": rows
-						})
-					);
 				}
 			}
 		}

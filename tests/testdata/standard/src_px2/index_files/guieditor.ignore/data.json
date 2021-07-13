@@ -138,6 +138,32 @@
                                                     "column-width": "1of3",
                                                     "main": [
                                                         {
+                                                            "modId": "local:basics/ml_multitext",
+                                                            "fields": {
+                                                                "main": {
+                                                                    "src": "",
+                                                                    "editor": "markdown",
+                                                                    "langs": []
+                                                                },
+                                                                "paragraph": "px2-p",
+                                                                "text-align": "",
+                                                                "font-size": ""
+                                                            }
+                                                        },
+                                                        {
+                                                            "modId": "local:basics/ml_text",
+                                                            "fields": {
+                                                                "main": {
+                                                                    "src": "",
+                                                                    "editor": "markdown",
+                                                                    "langs": []
+                                                                },
+                                                                "paragraph": "px2-p",
+                                                                "text-align": "",
+                                                                "font-size": ""
+                                                            }
+                                                        },
+                                                        {
                                                             "modId": "std-document:basics/text",
                                                             "fields": {
                                                                 "main": {

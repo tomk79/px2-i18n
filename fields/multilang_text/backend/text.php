@@ -20,6 +20,10 @@ class text extends \broccoliHtmlEditor\fieldBase{
 		$defaultLangSrc = '';
 		$subLangsSrc = array();
 
+		if(!isset($mod->subLangs)){
+			$mod->subLangs = array();
+		}
+
 		if( is_array($fieldData) ){
 			if( isset($fieldData['src']) && is_string($fieldData['src']) ){
 				$defaultLangSrc = ''.$fieldData['src'];
@@ -60,7 +64,7 @@ class text extends \broccoliHtmlEditor\fieldBase{
 		}
 
 		if( $mode == 'canvas' ){
-			if( !strlen(trim($rtn)) ){
+			if( !strlen(trim($defaultLangSrc)) ){
 				$rtn = '<span style="color:#999;background-color:#ddd;font-size:10px;padding:0 1em;max-width:100%;overflow:hidden;white-space:nowrap;">(ダブルクリックしてテキストを編集してください)</span>';
 			}else{
 				$rtn = $defaultLangSrc;

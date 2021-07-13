@@ -481,7 +481,7 @@ return call_user_func( function(){
 
 	/** カスタムフィールドを登録 */
 	@$conf->plugins->px2dt->guieditor->custom_fields = array(
-		'text'=>array(
+		'ml_text'=>array(
 			'backend'=>array(
 				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\text',
 				'require' => '../../../../fields/multilang_text/backend/text.js',
@@ -495,7 +495,21 @@ return call_user_func( function(){
 				'function' => 'window.BroccoliFieldMultilangText'
 			),
 		),
-		'multitext'=>array(
+		'ml_multitext'=>array(
+			'backend'=>array(
+				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\multitext',
+				'require' => '../../../../fields/multilang_multitext/backend/multitext.js',
+			),
+			'frontend'=>array(
+				'dir' => '../../../../fields/multilang_multitext/',
+				'file' => array(
+					'multitext.css',
+					'multitext.js',
+				),
+				'function' => 'window.BroccoliFieldMultilangMultitext'
+			),
+		),
+		'ml_summernote'=>array(
 			'backend'=>array(
 				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\summernote',
 				'require' => '../../../../fields/multilang_summernote/backend/summernote.js',
@@ -517,12 +531,17 @@ return call_user_func( function(){
 	$conf->plugins->px2dt->guieditor->field_config = array(
 
 		// multitext フィールドを設定
-		'multitext' => array(
+		'ml_multitext' => array(
+			'subLangs' => $conf->accept_langs,
+		),
+
+		// summernote フィールドを設定
+		'ml_summernote' => array(
 			'subLangs' => $conf->accept_langs,
 		),
 
 		// text フィールドを設定
-		'text' => array(
+		'ml_text' => array(
 			'subLangs' => $conf->accept_langs,
 		),
 
