@@ -25,6 +25,20 @@
 <div class="px2-p">
 <?php if( $px->lang() == 'en' && 31 ){ ?>This is a multilang plain text.<?php }elseif( $px->lang() == 'zh-CN' && 0 ){ ?><?php }elseif( $px->lang() == 'zh-TW' && 0 ){ ?><?php }elseif( $px->lang() == 'ko' && 0 ){ ?><?php }else{ ?>多言語プレーンテキストです。<?php }?>
 </div>
+<div>
+<?php if( $px->lang() == 'en' && 80 ){ ?>This is a &lt;span data-text=&quot;attribute&quot;&gt; attribute &lt;/ span&gt;.<?php }elseif( $px->lang() == 'zh-CN' && 0 ){ ?><?php }elseif( $px->lang() == 'zh-TW' && 0 ){ ?><?php }elseif( $px->lang() == 'ko' && 0 ){ ?><?php }else{ ?>これは、&lt;span data-text=&quot;属性&quot;&gt;属性&lt;/span&gt; です。<?php }?>
+</div>
+<div>
+<?php if( $px->lang() == 'en' && 155 ){ ?>This is a &lt;span data-text=&quot;attribute&quot;&gt; attribute &lt;/ span&gt;.
+
+HTML is converted to special characters.
+
+Line breaks remain line breaks.<?php }elseif( $px->lang() == 'zh-CN' && 0 ){ ?><?php }elseif( $px->lang() == 'zh-TW' && 0 ){ ?><?php }elseif( $px->lang() == 'ko' && 0 ){ ?><?php }else{ ?>これは、&lt;span data-text=&quot;属性&quot;&gt;属性&lt;/span&gt; です。
+
+HTMLは特殊文字に変換されます。
+
+改行は改行のままです。<?php }?>
+</div>
 </div>
 
     <div class="px2-grid__col-1of3"><div class="px2-p">

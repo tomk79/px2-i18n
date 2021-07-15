@@ -155,14 +155,14 @@ window.BroccoliFieldMultilangSummernote = function(broccoli){
 			}else{
 
 				var $summernote = $('<div>');
-				$summernote.addClass('broccoli-field-summernote');
+				$summernote.addClass('broccoli-field-multilang-summernote');
 				$div.append(
 					$summernote
 				);
 
 				if( isGlobalJQuery ){
 					// jQuery がある場合
-					var $targetElm = window.jQuery(elm).find('.broccoli-field-summernote').eq(0);
+					var $targetElm = window.jQuery(elm).find('.broccoli-field-multilang-summernote').eq(0);
 					$targetElm.summernote({
 						// TODO: 隠蔽したい。
 						placeholder: '',
@@ -181,8 +181,8 @@ window.BroccoliFieldMultilangSummernote = function(broccoli){
 					$targetElm.summernote('code', src);
 				}else{
 					// jQuery がない場合
-					console.error('broccoli-field-summernoteフィールドで Summernote (WYSIWYG)を利用するには、グローバルスコープに jQuery がロードされている必要があります。');
-					$(elm).find('.broccoli-field-summernote').append( $('<textarea class="form-control">')
+					console.error('broccoli-field-multilang-summernoteフィールドで Summernote (WYSIWYG)を利用するには、グローバルスコープに jQuery がロードされている必要があります。');
+					$(elm).find('.broccoli-field-multilang-summernote').append( $('<textarea class="form-control">')
 						.val(src)
 						.attr({
 							"rows": rows
@@ -207,7 +207,7 @@ window.BroccoliFieldMultilangSummernote = function(broccoli){
 			$(elm).append($selectLang);
 			$selectLang.append('<option value="">select language...</option>');
 
-			var $divSubLangs = $('<div class="broccoli-field-multilang-text-sublangs">');
+			var $divSubLangs = $('<div class="broccoli-field-multilang-text__sublangs">');
 			$(elm).append($divSubLangs);
 
 			for(var idx = 0; idx < mod.subLangs.length; idx ++ ){
@@ -294,7 +294,7 @@ window.BroccoliFieldMultilangSummernote = function(broccoli){
 			// jQuery がある場合
 
 			// デフォルト言語
-			var $targetElm = window.jQuery(elm).find('[data-lang=editor-default-lang] .broccoli-field-summernote').eq(0);
+			var $targetElm = window.jQuery(elm).find('[data-lang=editor-default-lang] .broccoli-field-multilang-summernote').eq(0);
 				// TODO: 隠蔽したい。
 
 			rtn.src = $targetElm.summernote('code');
@@ -303,7 +303,7 @@ window.BroccoliFieldMultilangSummernote = function(broccoli){
 			// jQuery がない場合
 
 			// デフォルト言語
-			rtn.src = $elm.find('[data-lang=editor-default-lang] .broccoli-field-summernote textarea').eq(0).val();
+			rtn.src = $elm.find('[data-lang=editor-default-lang] .broccoli-field-multilang-summernote textarea').eq(0).val();
 		}
 
 
@@ -320,7 +320,7 @@ window.BroccoliFieldMultilangSummernote = function(broccoli){
 					// jQuery がある場合
 
 					// 副言語
-					var $targetElm = window.jQuery(elm).find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-summernote').eq(0);
+					var $targetElm = window.jQuery(elm).find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-multilang-summernote').eq(0);
 						// TODO: 隠蔽したい。
 
 					rtn.langs[currentLang] = $targetElm.summernote('code');
@@ -329,7 +329,7 @@ window.BroccoliFieldMultilangSummernote = function(broccoli){
 					// jQuery がない場合
 
 					// 副言語
-					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-summernote textarea').eq(0).val();
+					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-multilang-summernote textarea').eq(0).val();
 				}
 			}
 		}

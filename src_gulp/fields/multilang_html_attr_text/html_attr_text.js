@@ -1,4 +1,4 @@
-window.BroccoliFieldMultilangText = function(broccoli){
+window.BroccoliFieldMultilangHtmlAttrText = function(broccoli){
 	var $ = require('jquery');
 
 	/**
@@ -105,12 +105,12 @@ window.BroccoliFieldMultilangText = function(broccoli){
 			}else{
 
 				var $text = $('<div>');
-				$text.addClass('broccoli-field-multilang-text');
+				$text.addClass('broccoli-field-multilang-html-attr-text');
 				$div.append(
 					$text
 				);
 
-				$(elm).find('.broccoli-field-multilang-text').append( $('<textarea class="form-control">')
+				$(elm).find('.broccoli-field-multilang-html-attr-text').append( $('<textarea class="form-control">')
 					.val(src)
 					.attr({
 						"rows": rows
@@ -134,7 +134,7 @@ window.BroccoliFieldMultilangText = function(broccoli){
 			$(elm).append($selectLang);
 			$selectLang.append('<option value="">select language...</option>');
 
-			var $divSubLangs = $('<div class="broccoli-field-multilang-text__sublangs">');
+			var $divSubLangs = $('<div class="broccoli-field-multilang-html-attr-text__sublangs">');
 			$(elm).append($divSubLangs);
 
 			for(var idx = 0; idx < mod.subLangs.length; idx ++ ){
@@ -221,7 +221,7 @@ window.BroccoliFieldMultilangText = function(broccoli){
 			// jQuery がない場合
 
 			// デフォルト言語
-			rtn.src = $elm.find('[data-lang=editor-default-lang] .broccoli-field-multilang-text textarea').eq(0).val();
+			rtn.src = $elm.find('[data-lang=editor-default-lang] .broccoli-field-multilang-html-attr-text textarea').eq(0).val();
 		}
 
 
@@ -238,7 +238,7 @@ window.BroccoliFieldMultilangText = function(broccoli){
 					// jQuery がない場合
 
 					// 副言語
-					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-multilang-text textarea').eq(0).val();
+					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-multilang-html-attr-text textarea').eq(0).val();
 				}
 			}
 		}

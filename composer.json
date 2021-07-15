@@ -30,6 +30,7 @@
                 "php/"
             ],
             "tomk79\\pickles2\\px2I18n\\fields\\": [
+                "fields/multilang_html_attr_text/backend/",
                 "fields/multilang_text/backend/",
                 "fields/multilang_multitext/backend/",
                 "fields/multilang_summernote/backend/"

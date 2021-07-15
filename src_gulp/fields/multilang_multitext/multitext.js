@@ -251,7 +251,7 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 			$(elm).append($selectLang);
 			$selectLang.append('<option value="">select language...</option>');
 
-			var $divSubLangs = $('<div class="broccoli-field-multilang-text-sublangs">');
+			var $divSubLangs = $('<div class="broccoli-field-multilang-multitext__sublangs">');
 			$(elm).append($divSubLangs);
 
 			for(var idx = 0; idx < mod.subLangs.length; idx ++ ){

@@ -104,13 +104,45 @@ gulp.task('multilangText:css', function(){
 });
 
 
+// multilangHtmlAttrText フィールド を処理
+gulp.task('multilangHtmlAttrText:js', function(){
+	return webpackStream({
+		mode: 'production',
+		entry: "./src_gulp/fields/multilang_html_attr_text/html_attr_text.js",
+		output: {
+			filename: "html_attr_text.js"
+		},
+		module:{
+			rules:[
+				{
+					test:/\.twig$/,
+					use:['twig-loader']
+				}
+			]
+		}
+	}, webpack)
+		.pipe(plumber())
+		.pipe(gulp.dest( './fields/multilang_html_attr_text/' ))
+	;
+});
+gulp.task('multilangHtmlAttrText:css', function(){
+	return gulp.src(["./src_gulp/fields/multilang_html_attr_text/html_attr_text.css"])
+		.pipe(plumber())
+		.pipe(concat('html_attr_text.css'))
+		.pipe(gulp.dest( './fields/multilang_html_attr_text/' ))
+	;
+});
+
+
 let _tasks = gulp.parallel(
 	'multilangMultitextEditor:js',
 	'multilangMultitextEditor:css',
 	'multilangSummernoteEditor:js',
 	'multilangSummernoteEditor:css',
 	'multilangText:js',
-	'multilangText:css'
+	'multilangText:css',
+	'multilangHtmlAttrText:js',
+	'multilangHtmlAttrText:css'
 );
 
 // src 中のすべての拡張子を監視して処理

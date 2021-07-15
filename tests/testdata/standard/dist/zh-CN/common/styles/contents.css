@@ -11,6 +11,12 @@
  * module: interact:interactives/tabs
  */
   /**
+ * module: local:basics/ml_html_attr_text
+ */
+  /**
+ * module: local:basics/ml_html_attr_text_1l
+ */
+  /**
  * module: local:basics/ml_multitext
  */
   /**
@@ -415,6 +421,26 @@
 }
 .contents .px2-tabs__content.px2-tabs--active {
   display: block;
+}
+.contents pre {
+  padding: 1em;
+  overflow: auto;
+}
+.contents pre code {
+  display: inline;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+.contents pre {
+  padding: 1em;
+  overflow: auto;
+}
+.contents pre code {
+  display: inline;
+  border: none;
+  padding: 0;
+  margin: 0;
 }
 .contents pre {
   padding: 1em;

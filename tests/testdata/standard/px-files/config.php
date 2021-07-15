@@ -495,6 +495,20 @@ return call_user_func( function(){
 				'function' => 'window.BroccoliFieldMultilangText'
 			),
 		),
+		'ml_html_attr_text'=>array(
+			'backend'=>array(
+				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\html_attr_text',
+				'require' => '../../../../fields/multilang_html_attr_text/backend/html_attr_text.js',
+			),
+			'frontend'=>array(
+				'dir' => '../../../../fields/multilang_html_attr_text/',
+				'file' => array(
+					'html_attr_text.css',
+					'html_attr_text.js'
+				),
+				'function' => 'window.BroccoliFieldMultilangHtmlAttrText'
+			),
+		),
 		'ml_multitext'=>array(
 			'backend'=>array(
 				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\multitext',
@@ -542,6 +556,11 @@ return call_user_func( function(){
 
 		// text フィールドを設定
 		'ml_text' => array(
+			'subLangs' => $conf->accept_langs,
+		),
+
+		// html_attr_text フィールドを設定
+		'ml_html_attr_text' => array(
 			'subLangs' => $conf->accept_langs,
 		),
 

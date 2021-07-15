@@ -1,0 +1,13 @@
+{
+    "name": "多言語属性テキスト(1行)",
+    "interface": {
+        "fields": {
+            "main": {
+                "fieldType": "input",
+                "type": "ml_html_attr_text",
+                "label": "属性テキスト",
+                "rows": 1
+            }
+        }
+    }
+}
