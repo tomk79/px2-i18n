@@ -35,8 +35,11 @@ gulp.task('multilangMultitextEditor:js', function(){
 	;
 });
 gulp.task('multilangMultitextEditor:css', function(){
-	return gulp.src(["./src_gulp/fields/multilang_multitext/multitext.css"])
+	return gulp.src(["./src_gulp/fields/multilang_multitext/multitext.scss"])
 		.pipe(plumber())
+		.pipe(sass({
+			"sourceComments": false
+		}))
 		.pipe(concat('multitext.css'))
 		.pipe(gulp.dest( './fields/multilang_multitext/' ))
 	;
@@ -66,8 +69,11 @@ gulp.task('multilangSummernoteEditor:js', function(){
 	;
 });
 gulp.task('multilangSummernoteEditor:css', function(){
-	return gulp.src(["./src_gulp/fields/multilang_summernote/summernote.css"])
+	return gulp.src(["./src_gulp/fields/multilang_summernote/summernote.scss"])
 		.pipe(plumber())
+		.pipe(sass({
+			"sourceComments": false
+		}))
 		.pipe(concat('summernote.css'))
 		.pipe(gulp.dest( './fields/multilang_summernote/' ))
 	;
@@ -96,8 +102,11 @@ gulp.task('multilangText:js', function(){
 	;
 });
 gulp.task('multilangText:css', function(){
-	return gulp.src(["./src_gulp/fields/multilang_text/text.css"])
+	return gulp.src(["./src_gulp/fields/multilang_text/text.scss"])
 		.pipe(plumber())
+		.pipe(sass({
+			"sourceComments": false
+		}))
 		.pipe(concat('text.css'))
 		.pipe(gulp.dest( './fields/multilang_text/' ))
 	;
@@ -126,8 +135,11 @@ gulp.task('multilangHtmlAttrText:js', function(){
 	;
 });
 gulp.task('multilangHtmlAttrText:css', function(){
-	return gulp.src(["./src_gulp/fields/multilang_html_attr_text/html_attr_text.css"])
+	return gulp.src(["./src_gulp/fields/multilang_html_attr_text/html_attr_text.scss"])
 		.pipe(plumber())
+		.pipe(sass({
+			"sourceComments": false
+		}))
 		.pipe(concat('html_attr_text.css'))
 		.pipe(gulp.dest( './fields/multilang_html_attr_text/' ))
 	;
