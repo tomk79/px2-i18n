@@ -7,7 +7,8 @@
     "license": "MIT",
     "repositories": [],
     "require": {
-        "php": ">=5.4.0"
+        "php": ">=5.4.0",
+        "google/cloud-translate": "^1.10"
     },
     "require-dev": {
         "pickles2/px-fw-2.x": "^2.0",
