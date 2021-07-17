@@ -7,6 +7,9 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 		}
 	} catch (e) {
 	}
+	var templates = {
+		'frame': require('../../_shared/templates/frame.twig'),
+	};
 
 	function htmlspecialchars(text){
 		text = text.split(/\&/g).join('&amp;');
@@ -96,10 +99,9 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 		}
 
 		function mkInputField(elm, src, lang){
-			var $rtn = $('<div>'),
+			var $rtn = $(elm),
 				$formElm
 			;
-			$(elm).html($rtn);
 
 			var fieldName = mod.name;
 
@@ -237,39 +239,27 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 		}
 
 		// デフォルト言語
-		var $elm = $('<div>');
-		$elm.attr({
-			'data-lang': 'editor-default-lang',
-		});
-		$(elm).append($elm);
-		mkInputField($elm, data.src);
+		var $elm = $(elm);
+		$elm.append( templates.frame({
+			"mod": mod,
+			"data": data,
+		}) );
+		mkInputField($elm.find('[data-lang=editor-default-lang]'), data.src);
 
 		// 副言語
 		if( mod.subLangs && mod.subLangs.length ){
 
-			var $selectLang = $('<select>');
-			$(elm).append($selectLang);
-			$selectLang.append('<option value="">select language...</option>');
-
-			var $divSubLangs = $('<div class="broccoli-field-multilang-multitext__sublangs">');
-			$(elm).append($divSubLangs);
+			var $selectLang = $elm.find('.broccoli-field-px2-i18n__sub-lang-selector select');
+			var $divSubLangs = $elm.find('.broccoli-field-px2-i18n__sub-langs');
 
 			for(var idx = 0; idx < mod.subLangs.length; idx ++ ){
-				$selectLang.append($('<option>')
-					.attr({
-						"value": mod.subLangs[idx],
-					})
-					.text( mod.subLangs[idx] )
+				mkInputField(
+					$elm.find('[data-lang=editor-lang-'+mod.subLangs[idx]+']'),
+					data.langs[mod.subLangs[idx]],
+					mod.subLangs[idx]
 				);
-				var $elm = $('<div>');
-				$elm.attr({
-					'data-lang': 'editor-lang-'+mod.subLangs[idx],
-				});
-				$divSubLangs.append($elm);
-				mkInputField($elm, data.langs[mod.subLangs[idx]], mod.subLangs[idx]);
 			}
 
-			$selectLang.append('<option value="_all">all</option>');
 			$selectLang.on('change', function(){
 				var $this = $(this);
 				var selectedValue = $this.val();

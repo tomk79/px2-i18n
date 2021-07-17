@@ -1,1 +1,21 @@
-<div></div>
+<div class="broccoli-field-px2-i18n">
+    <div class="broccoli-field-px2-i18n__default-lang">
+        <div data-lang="editor-default-lang"></div>
+    </div>
+    {% if mod.subLangs and mod.subLangs.length %}
+    <div class="broccoli-field-px2-i18n__sub-lang-selector">
+        <select>
+            <option value="">select language...</option>
+            {% for lang in mod.subLangs %}
+            <option value="{{ lang }}">{{ lang }}</option>
+            {% endfor %}
+            <option value="_all">all</option>
+        </select>
+    </div>
+    <div class="broccoli-field-px2-i18n__sub-langs">
+        {% for lang in mod.subLangs %}
+        <div data-lang="editor-lang-{{ lang }}"></div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
