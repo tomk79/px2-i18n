@@ -222,7 +222,7 @@ window.BroccoliFieldMultilangSummernote = function(broccoli){
 					'data-lang': 'editor-lang-'+mod.subLangs[idx],
 				});
 				$divSubLangs.append($elm);
-				mkInputField($elm, data.langs[mod.subLangs[idx]], mod.subLangs[idx]);
+				mkInputField($elm, data.langs[mod.subLangs[idx]].src, mod.subLangs[idx]);
 			}
 
 			$selectLang.append('<option value="_all">all</option>');
@@ -311,10 +311,13 @@ window.BroccoliFieldMultilangSummernote = function(broccoli){
 		if( mod.subLangs && mod.subLangs.length ){
 			for(var idx = 0; idx < mod.subLangs.length; idx ++ ){
 				var currentLang = mod.subLangs[idx];
+				rtn.langs[currentLang] = rtn.langs[currentLang] || {
+					'src': '',
+				};
 
 				if( rows == 1 && $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').length ){
 					// 副言語
-					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').eq(0).val();
+					rtn.langs[currentLang].src = $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').eq(0).val();
 
 				}else if( isGlobalJQuery ){
 					// jQuery がある場合
@@ -323,13 +326,13 @@ window.BroccoliFieldMultilangSummernote = function(broccoli){
 					var $targetElm = window.jQuery(elm).find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-multilang-summernote').eq(0);
 						// TODO: 隠蔽したい。
 
-					rtn.langs[currentLang] = $targetElm.summernote('code');
+					rtn.langs[currentLang].src = $targetElm.summernote('code');
 
 				}else{
 					// jQuery がない場合
 
 					// 副言語
-					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-multilang-summernote textarea').eq(0).val();
+					rtn.langs[currentLang].src = $elm.find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-multilang-summernote textarea').eq(0).val();
 				}
 			}
 		}

@@ -149,7 +149,7 @@ window.BroccoliFieldMultilangText = function(broccoli){
 					'data-lang': 'editor-lang-'+mod.subLangs[idx],
 				});
 				$divSubLangs.append($elm);
-				mkInputField($elm, data.langs[mod.subLangs[idx]], mod.subLangs[idx]);
+				mkInputField($elm, data.langs[mod.subLangs[idx]].src, mod.subLangs[idx]);
 			}
 
 			$selectLang.append('<option value="_all">all</option>');
@@ -229,16 +229,15 @@ window.BroccoliFieldMultilangText = function(broccoli){
 		if( mod.subLangs && mod.subLangs.length ){
 			for(var idx = 0; idx < mod.subLangs.length; idx ++ ){
 				var currentLang = mod.subLangs[idx];
+				rtn.langs[currentLang] = rtn.langs[currentLang] || {
+					'src': '',
+				};
 
+				// 副言語
 				if( rows == 1 && $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').length ){
-					// 副言語
-					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').eq(0).val();
-
+					rtn.langs[currentLang].src = $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').eq(0).val();
 				}else{
-					// jQuery がない場合
-
-					// 副言語
-					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-multilang-text textarea').eq(0).val();
+					rtn.langs[currentLang].src = $elm.find('[data-lang=editor-lang-'+currentLang+'] .broccoli-field-multilang-text textarea').eq(0).val();
 				}
 			}
 		}

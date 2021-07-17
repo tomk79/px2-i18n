@@ -35,10 +35,18 @@
                                                         "src": "これは1行多言語マルチテキストです。",
                                                         "editor": "markdown",
                                                         "langs": {
-                                                            "en": "This is a 1 liner Multi Text.",
-                                                            "zh-CN": "",
-                                                            "zh-TW": "",
-                                                            "ko": ""
+                                                            "en": {
+                                                                "src": "This is one line multilingual multitext."
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "这是一行多语言多文本。"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "這是一行多語言多文本。"
+                                                            },
+                                                            "ko": {
+                                                                "src": "이것은 한 줄 다국어 멀티 텍스트입니다."
+                                                            }
                                                         }
                                                     },
                                                     "paragraph": {
@@ -61,10 +69,18 @@
                                                         "src": "多言語マルチテキストです。",
                                                         "editor": "markdown",
                                                         "langs": {
-                                                            "en": "This is a Multilang Multitext.",
-                                                            "zh-CN": "",
-                                                            "zh-TW": "",
-                                                            "ko": ""
+                                                            "en": {
+                                                                "src": "Multilingual multitext."
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "多语言多文本。"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "多語言多文本。"
+                                                            },
+                                                            "ko": {
+                                                                "src": "다국어 멀티 텍스트입니다."
+                                                            }
                                                         }
                                                     },
                                                     "paragraph": {
@@ -148,11 +164,20 @@
                                                     "main": {
                                                         "src": "これは、<span data-text=\"属性\">属性</span> です。",
                                                         "langs": {
-                                                            "en": "This is a <span data-text=\"attribute\"> attribute </ span>.",
-                                                            "zh-CN": "",
-                                                            "zh-TW": "",
-                                                            "ko": ""
-                                                        }
+                                                            "en": {
+                                                                "src": "これは、<span data-text=\"属性\">属性</span> です。"
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "これは、<span data-text=\"属性\">属性</span> です。"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "これは、<span data-text=\"属性\">属性</span> です。"
+                                                            },
+                                                            "ko": {
+                                                                "src": "これは、<span data-text=\"属性\">属性</span> です。"
+                                                            }
+                                                        },
+                                                        "editor": "text"
                                                     }
                                                 },
                                                 "anchor": "",
@@ -165,10 +190,18 @@
                                                         "src": "これは、<span data-text=\"属性\">属性</span> です。\n\nHTMLは特殊文字に変換されます。\n\n改行は改行のままです。",
                                                         "editor": "",
                                                         "langs": {
-                                                            "en": "This is a <span data-text=\"attribute\"> attribute </ span>.\n\nHTML is converted to special characters.\n\nLine breaks remain line breaks.",
-                                                            "zh-CN": "",
-                                                            "zh-TW": "",
-                                                            "ko": ""
+                                                            "en": {
+                                                                "src": "これは、<span data-text=\"属性\">属性</span> です。\n\nHTMLは特殊文字に変換されます。\n\n改行は改行のままです。"
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "これは、<span data-text=\"属性\">属性</span> です。\n\nHTMLは特殊文字に変換されます。\n\n改行は改行のままです。"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "これは、<span data-text=\"属性\">属性</span> です。\n\nHTMLは特殊文字に変換されます。\n\n改行は改行のままです。"
+                                                            },
+                                                            "ko": {
+                                                                "src": "これは、<span data-text=\"属性\">属性</span> です。\n\nHTMLは特殊文字に変換されます。\n\n改行は改行のままです。"
+                                                            }
                                                         }
                                                     }
                                                 },

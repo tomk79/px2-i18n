@@ -294,7 +294,7 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 			for(var idx = 0; idx < mod.subLangs.length; idx ++ ){
 				mkInputField(
 					$elm.find('[data-lang=editor-lang-'+mod.subLangs[idx]+']'),
-					data.langs[mod.subLangs[idx]],
+					data.langs[mod.subLangs[idx]].src,
 					mod.subLangs[idx]
 				);
 			}
@@ -379,13 +379,16 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 			for(var idx = 0; idx < mod.subLangs.length; idx ++ ){
 				var currentLang = mod.subLangs[idx];
 
+				rtn.langs[currentLang] = rtn.langs[currentLang] || {
+					'src': '',
+				};
 				if( $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').length ){
-					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').val();
+					rtn.langs[currentLang].src = $elm.find('[data-lang=editor-lang-'+currentLang+'] input[type=text]').val();
 				}else if( editorLib == 'ace' && mod.aceEditor ){
 					mod.aceEditorLangs = mod.aceEditorLangs || {};
-					rtn.langs[currentLang] = mod.aceEditorLangs[currentLang].getValue();
+					rtn.langs[currentLang].src = mod.aceEditorLangs[currentLang].getValue();
 				}else{
-					rtn.langs[currentLang] = $elm.find('[data-lang=editor-lang-'+currentLang+'] textarea').val();
+					rtn.langs[currentLang].src = $elm.find('[data-lang=editor-lang-'+currentLang+'] textarea').val();
 				}
 			}
 		}

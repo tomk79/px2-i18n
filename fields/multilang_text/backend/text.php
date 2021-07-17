@@ -34,8 +34,8 @@ class text extends \broccoliHtmlEditor\fieldBase{
 			if( isset($fieldData['langs']) && is_array($fieldData['langs']) ){
 				foreach( $mod->subLangs as $currentLang ){
 					$currentLangSrc = '';
-					if( isset($fieldData['langs'][$currentLang]) ){
-						$currentLangSrc = $fieldData['langs'][$currentLang];
+					if( isset($fieldData['langs'][$currentLang]['src']) ){
+						$currentLangSrc = $fieldData['langs'][$currentLang]['src'];
 					}
 					$subLangsSrc[$currentLang] = ''.$currentLangSrc;
 					$subLangsSrc[$currentLang] = htmlspecialchars( $subLangsSrc[$currentLang] ); // ←HTML特殊文字変換

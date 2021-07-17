@@ -144,10 +144,18 @@
                                                                     "src": "これは1行多言語マルチテキストです。",
                                                                     "editor": "markdown",
                                                                     "langs": {
-                                                                        "en": "This is a 1 liner Multi Text.",
-                                                                        "zh-CN": "",
-                                                                        "zh-TW": "",
-                                                                        "ko": ""
+                                                                        "en": {
+                                                                            "src": "This is one line multilingual multitext."
+                                                                        },
+                                                                        "zh-CN": {
+                                                                            "src": "这是一行多语言多文本。"
+                                                                        },
+                                                                        "zh-TW": {
+                                                                            "src": "這是一行多語言多文本。"
+                                                                        },
+                                                                        "ko": {
+                                                                            "src": "이것은 한 줄 다국어 멀티 텍스트입니다."
+                                                                        }
                                                                     }
                                                                 },
                                                                 "paragraph": {
@@ -170,10 +178,18 @@
                                                                     "src": "多言語マルチテキストです。",
                                                                     "editor": "markdown",
                                                                     "langs": {
-                                                                        "en": "This is a Multilang Multitext.",
-                                                                        "zh-CN": "",
-                                                                        "zh-TW": "",
-                                                                        "ko": ""
+                                                                        "en": {
+                                                                            "src": "Multilingual multitext."
+                                                                        },
+                                                                        "zh-CN": {
+                                                                            "src": "多语言多文本。"
+                                                                        },
+                                                                        "zh-TW": {
+                                                                            "src": "多語言多文本。"
+                                                                        },
+                                                                        "ko": {
+                                                                            "src": "다국어 멀티 텍스트입니다."
+                                                                        }
                                                                     }
                                                                 },
                                                                 "paragraph": {
@@ -232,10 +248,18 @@
                                                                 "main": {
                                                                     "src": "1行多言語プレーンテキストです。",
                                                                     "langs": {
-                                                                        "en": "This is a Multilang Plain Text.",
-                                                                        "zh-CN": "",
-                                                                        "zh-TW": "",
-                                                                        "ko": ""
+                                                                        "en": {
+                                                                            "src": ""
+                                                                        },
+                                                                        "zh-CN": {
+                                                                            "src": ""
+                                                                        },
+                                                                        "zh-TW": {
+                                                                            "src": ""
+                                                                        },
+                                                                        "ko": {
+                                                                            "src": ""
+                                                                        }
                                                                     }
                                                                 },
                                                                 "paragraph": {
@@ -258,10 +282,18 @@
                                                                     "src": "多言語プレーンテキストです。",
                                                                     "editor": "",
                                                                     "langs": {
-                                                                        "en": "This is a multilang plain text.",
-                                                                        "zh-CN": "",
-                                                                        "zh-TW": "",
-                                                                        "ko": ""
+                                                                        "en": {
+                                                                            "src": ""
+                                                                        },
+                                                                        "zh-CN": {
+                                                                            "src": ""
+                                                                        },
+                                                                        "zh-TW": {
+                                                                            "src": ""
+                                                                        },
+                                                                        "ko": {
+                                                                            "src": ""
+                                                                        }
                                                                     }
                                                                 },
                                                                 "paragraph": {
@@ -318,10 +350,18 @@
                                                                     "src": "1行多言語サマーノートです。",
                                                                     "editor": "markdown",
                                                                     "langs": {
-                                                                        "en": "This is a 1 liner Summernote.",
-                                                                        "zh-CN": "",
-                                                                        "zh-TW": "",
-                                                                        "ko": ""
+                                                                        "en": {
+                                                                            "src": ""
+                                                                        },
+                                                                        "zh-CN": {
+                                                                            "src": ""
+                                                                        },
+                                                                        "zh-TW": {
+                                                                            "src": ""
+                                                                        },
+                                                                        "ko": {
+                                                                            "src": ""
+                                                                        }
                                                                     }
                                                                 },
                                                                 "paragraph": {
@@ -344,10 +384,18 @@
                                                                     "src": "多言語サマーノートです。",
                                                                     "editor": "",
                                                                     "langs": {
-                                                                        "en": "<p>This is a Multilang Summernote.</p>",
-                                                                        "zh-CN": "<p><br></p>",
-                                                                        "zh-TW": "<p><br></p>",
-                                                                        "ko": "<p><br></p>"
+                                                                        "en": {
+                                                                            "src": "<p><br></p>"
+                                                                        },
+                                                                        "zh-CN": {
+                                                                            "src": "<p><br></p>"
+                                                                        },
+                                                                        "zh-TW": {
+                                                                            "src": "<p><br></p>"
+                                                                        },
+                                                                        "ko": {
+                                                                            "src": "<p><br></p>"
+                                                                        }
                                                                     }
                                                                 },
                                                                 "paragraph": {
