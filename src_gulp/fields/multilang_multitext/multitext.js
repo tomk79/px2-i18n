@@ -1,4 +1,5 @@
 window.BroccoliFieldMultilangMultitext = function(broccoli){
+	var _this = this;
 	var $ = require('jquery');
 	var editorLib = null;
 	try {
@@ -75,6 +76,8 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 	 * エディタUIを生成 (Client Side)
 	 */
 	this.mkEditor = function( mod, data, elm, callback ){
+		var $elm = $(elm);
+
 		if(!data || typeof(data) != typeof({})){
 			data = {
 				'src':'' + ( typeof(data) === typeof('') ? data : '' ),
@@ -236,10 +239,46 @@ window.BroccoliFieldMultilangMultitext = function(broccoli){
 					});
 				}
 			}
+
+			if( lang ){
+				$rtn
+					.find('button[data-btn=auto-translate]')
+					.on('click', function(){
+						var src = '';
+						if( $elm.find('[data-lang=editor-default-lang] input[type=text]').length ){
+							src = $elm.find('[data-lang=editor-default-lang] input[type=text]').val();
+						}else if( editorLib == 'ace' && mod.aceEditor ){
+							src = mod.aceEditor.getValue();
+						}else{
+							src = $elm.find('[data-lang=editor-default-lang] textarea').val();
+						}
+						src = JSON.parse( JSON.stringify(src) );
+						var editor = $elm.find('[data-lang=editor-default-lang] input[type=radio][name=editor-'+mod.name+']:checked').val();
+						// console.log('=-=-=-=-=', editor, src, mod);
+
+						_this.callGpi(
+							{
+								'api': 'translate',
+								'input': src,
+								'source': (mod.defaultLang ? mod.defaultLang : 'ja'),
+								'target': lang,
+								'format': (editor=='text' || editor=='markdown' ? 'text' : 'html'),
+								'autoTranslator': mod.autoTranslator,
+							} ,
+							function(output){
+								console.log('=-=-=-=-=', output);
+								return;
+							}
+						);
+					})
+				;
+
+
+			}
+
 		}
 
 		// デフォルト言語
-		var $elm = $(elm);
 		$elm.append( templates.frame({
 			"mod": mod,
 			"data": data,

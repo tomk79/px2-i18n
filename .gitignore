@@ -21,3 +21,6 @@ tests/testdata/standard/src_px2/common/px_resources/
 # npm
 /node_modules/
 package-lock.json
+
+# Google Cloud
+google-cloud-credentials.json

@@ -542,27 +542,27 @@ return call_user_func( function(){
 	);
 
 	/** Broccoliフィールドの初期設定 */
+	$mlSettings = array(
+		'defaultLang' => $conf->default_lang,
+		'subLangs' => $conf->accept_langs,
+	);
+
+	// Google Cloud の認証情報のパスを、環境変数として宣言する
+	putenv( 'GOOGLE_APPLICATION_CREDENTIALS='.realpath('../../../../google-cloud-credentials.json') );
+
 	$conf->plugins->px2dt->guieditor->field_config = array(
 
 		// multitext フィールドを設定
-		'ml_multitext' => array(
-			'subLangs' => $conf->accept_langs,
-		),
+		'ml_multitext' => $mlSettings,
 
 		// summernote フィールドを設定
-		'ml_summernote' => array(
-			'subLangs' => $conf->accept_langs,
-		),
+		'ml_summernote' => $mlSettings,
 
 		// text フィールドを設定
-		'ml_text' => array(
-			'subLangs' => $conf->accept_langs,
-		),
+		'ml_text' => $mlSettings,
 
 		// html_attr_text フィールドを設定
-		'ml_html_attr_text' => array(
-			'subLangs' => $conf->accept_langs,
-		),
+		'ml_html_attr_text' => $mlSettings,
 
 		// image フィールドを設定
 		'image' => array(

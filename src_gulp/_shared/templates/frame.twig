@@ -4,7 +4,7 @@
     </div>
     {% if mod.subLangs and mod.subLangs.length %}
     <div class="broccoli-field-px2-i18n__sub-lang-selector">
-        <select>
+        <select class="px2-input">
             <option value="">select language...</option>
             {% for lang in mod.subLangs %}
             <option value="{{ lang }}">{{ lang }}</option>
@@ -14,7 +14,9 @@
     </div>
     <div class="broccoli-field-px2-i18n__sub-langs">
         {% for lang in mod.subLangs %}
-        <div data-lang="editor-lang-{{ lang }}"></div>
+        <div data-lang="editor-lang-{{ lang }}">
+            <p><button type="button" class="px2-btn" data-btn="auto-translate">自動翻訳</button></p>
+        </div>
         {% endfor %}
     </div>
     {% endif %}

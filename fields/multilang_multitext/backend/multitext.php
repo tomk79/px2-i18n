@@ -94,4 +94,54 @@ class multitext extends \broccoliHtmlEditor\fieldBase{
 		return $rtn;
 	}
 
+
+
+	/**
+	 * GPI (Server Side)
+	 */
+	public function gpi($options = array()){
+
+		switch($options['api']){
+			case 'translate':
+				$translate = new \Google\Cloud\Translate\V2\TranslateClient();
+
+				$result = array(
+					'text' => null,
+				);
+				try{
+					$result = $translate->translate(
+						$options['input'],
+						array(
+							'source' => $options['source'],
+							'target' => $options['target'],
+							'format' => $options['format'],
+						)
+					);
+				}catch( \Exception $e ){
+					return array(
+						'status' => false,
+						'message' => $e->getMessage(),
+					);
+				}
+
+				return array(
+					'status' => true,
+					'message' => 'OK',
+					'result' => $result['text'],
+				);
+				break;
+
+
+			default:
+				return array(
+					'status' => false,
+					'message' => 'ERROR: Unknown API',
+				);
+				break;
+		}
+
+		return false;
+	}
+
+
 }
