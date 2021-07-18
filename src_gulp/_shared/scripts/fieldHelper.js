@@ -102,6 +102,10 @@ module.exports = function( field, initOptions ){
 
 			for(var idx = 0; idx < mod.subLangs.length; idx ++ ){
 				var $elmCurrentLang = $elm.find('[data-lang=editor-lang-'+mod.subLangs[idx]+']');
+				var srcCurrentLang = '';
+				if( data.langs[mod.subLangs[idx]] ){
+					srcCurrentLang = data.langs[mod.subLangs[idx]].src;
+				}
 				initOptions.mkUiUnit(
 					$elmCurrentLang,
 					mod.subLangs[idx],
@@ -112,7 +116,7 @@ module.exports = function( field, initOptions ){
 					mod.subLangs[idx],
 					mod,
 					{
-						'src': data.langs[mod.subLangs[idx]].src,
+						'src': srcCurrentLang,
 					}
 				);
 

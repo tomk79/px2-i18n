@@ -28,7 +28,6 @@ window.BroccoliFieldPx2I18nText = function(broccoli){
 			}else{
 
 				var $text = $('<div>');
-				$text.addClass('broccoli-field-multilang-text');
 				$elm.append(
 					$text
 				);
@@ -46,18 +45,9 @@ window.BroccoliFieldPx2I18nText = function(broccoli){
 			// --------------------------------------
 			// 言語個別の入力欄から値を抽出する
 
-			var tmpAceEditor;
-			if( !lang ){
-				tmpAceEditor = aceEditor;
-			}else{
-				tmpAceEditor = aceEditorLangs[lang];
-			}
-
 			var src = '';
 			if( $elm.find('input[type=text]').length ){
 				src = $elm.find('input[type=text]').val();
-			}else if( editorLib == 'ace' && tmpAceEditor ){
-				src = tmpAceEditor.getValue();
 			}else{
 				src = $elm.find('textarea').val();
 			}

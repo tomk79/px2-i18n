@@ -311,6 +311,56 @@
                                                             "dec": ""
                                                         },
                                                         {
+                                                            "modId": "local:basics/ml_html_attr_text_1l",
+                                                            "fields": {
+                                                                "main": {
+                                                                    "src": "1行分の属性テキスト欄です。 alt 属性などに用います。",
+                                                                    "editor": "text",
+                                                                    "langs": {
+                                                                        "en": {
+                                                                            "src": "One line of attribute text field. It is used for alt attribute etc."
+                                                                        },
+                                                                        "zh-CN": {
+                                                                            "src": "一行属性文本字段。它用于 alt 属性等。"
+                                                                        },
+                                                                        "zh-TW": {
+                                                                            "src": "一行屬性文本字段。它用於 alt 屬性等。"
+                                                                        },
+                                                                        "ko": {
+                                                                            "src": "한 줄의 속성 텍스트 필드입니다. alt 속성 등에 사용합니다."
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "anchor": "",
+                                                            "dec": ""
+                                                        },
+                                                        {
+                                                            "modId": "local:basics/ml_html_attr_text",
+                                                            "fields": {
+                                                                "main": {
+                                                                    "src": "複数行の属性欄です。\n\n場合によって、属性値は複数行のテキストを表現することができます。\n\n改行は、改行コードのまま、<span>HTML特殊文字</span>だけがエスケープ処理を受けます。",
+                                                                    "editor": "text",
+                                                                    "langs": {
+                                                                        "en": {
+                                                                            "src": "This is a multi-line attribute field.\n\nIn some cases, attribute values can represent multiple lines of text.\n\nFor line breaks, only <span> HTML special characters </ span> are escaped, leaving the line feed code as it is."
+                                                                        },
+                                                                        "zh-CN": {
+                                                                            "src": "这是一个多行属性字段。\n\n在某些情况下，属性值可以表示多行文本。\n\n对于换行符，只有 <span> HTML 特殊字符 </span> 被转义，保持换行代码不变。"
+                                                                        },
+                                                                        "zh-TW": {
+                                                                            "src": "這是一個多行屬性字段。\n\n在某些情況下，屬性值可以表示多行文本。\n\n對於換行符，只有 <span> HTML 特殊字符 </span> 被轉義，保持換行代碼不變。"
+                                                                        },
+                                                                        "ko": {
+                                                                            "src": "여러 줄 속성 필드입니다.\n\n경우에 따라서 속성 값은 여러 줄의 텍스트를 표현 할 수 있습니다.\n\n줄 바꿈은 개행 코드의 채 <span> HTML 특수 문자 </ span> 만 이스케이프를받습니다."
+                                                                        }
+                                                                    }
+                                                                }
+                                                            },
+                                                            "anchor": "",
+                                                            "dec": ""
+                                                        },
+                                                        {
                                                             "modId": "std-document:basics/text",
                                                             "fields": {
                                                                 "main": {
