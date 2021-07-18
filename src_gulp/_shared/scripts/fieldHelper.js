@@ -8,6 +8,7 @@ module.exports = function( field, initOptions ){
 
 	var _this = this;
 	var $ = require('jquery');
+	var px2style = new (require('px2style'))();
 	var templates = {
 		'frame': require('..//templates/frame.twig'),
 	};
@@ -119,6 +120,9 @@ module.exports = function( field, initOptions ){
 					.find('button[data-btn=auto-translate]')
 					.attr({'data-lang': mod.subLangs[idx]})
 					.on('click', function(){
+						var $this = $(this);
+						px2style.loading();
+						$this.attr({'disabled': 'disabled'});
 						var defaultLangValue = initOptions.val(
 							$elm.find('[data-lang=editor-default-lang]'),
 							null,
@@ -143,6 +147,8 @@ module.exports = function( field, initOptions ){
 								// console.log('=-=-=-=-=', output);
 								if( !output.status ){
 									alert( '[ERROR] ' + output.message );
+									px2style.closeLoading();
+									$this.removeAttr('disabled');
 									return;
 								}
 
@@ -155,6 +161,10 @@ module.exports = function( field, initOptions ){
 									}
 								);
 
+								setTimeout(function(){
+									$this.removeAttr('disabled');
+									px2style.closeLoading();
+								}, 500)
 								return;
 							}
 						);
