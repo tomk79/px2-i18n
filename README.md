@@ -55,10 +55,10 @@ $conf->plugins->px2dt->guieditor->custom_fields = array(
 	'text'=>array(
 		'backend'=>array(
 			'class' => 'tomk79\\pickles2\\px2I18n\\fields\\text',
-			'require' => 'path/to/vendor/tomk79/px2-i18n/fields/multilang_text/backend/text.js',
+			'require' => 'path/to/vendor/tomk79/px2-i18n/fields/i18n_text/backend/text.js',
 		),
 		'frontend'=>array(
-			'dir' => 'path/to/vendor/tomk79/px2-i18n/fields/multilang_text/frontend/',
+			'dir' => 'path/to/vendor/tomk79/px2-i18n/fields/i18n_text/frontend/',
 			'file' => array(
 				'text.css',
 				'text.js'
@@ -69,10 +69,10 @@ $conf->plugins->px2dt->guieditor->custom_fields = array(
 	'html_attr_text'=>array(
 		'backend'=>array(
 			'class' => 'tomk79\\pickles2\\px2I18n\\fields\\html_attr_text',
-			'require' => 'path/to/vendor/tomk79/px2-i18n/fields/multilang_html_attr_text/backend/html_attr_text.js',
+			'require' => 'path/to/vendor/tomk79/px2-i18n/fields/i18n_html_attr_text/backend/html_attr_text.js',
 		),
 		'frontend'=>array(
-			'dir' => 'path/to/vendor/tomk79/px2-i18n/fields/multilang_html_attr_text/frontend/',
+			'dir' => 'path/to/vendor/tomk79/px2-i18n/fields/i18n_html_attr_text/frontend/',
 			'file' => array(
 				'html_attr_text.css',
 				'html_attr_text.js'
@@ -83,10 +83,10 @@ $conf->plugins->px2dt->guieditor->custom_fields = array(
 	'multitext'=>array(
 		'backend'=>array(
 			'class' => 'tomk79\\pickles2\\px2I18n\\fields\\multitext',
-			'require' => 'path/to/vendor/tomk79/px2-i18n/fields/multilang_multitext/backend/multitext.js',
+			'require' => 'path/to/vendor/tomk79/px2-i18n/fields/i18n_multitext/backend/multitext.js',
 		),
 		'frontend'=>array(
-			'dir' => 'path/to/vendor/tomk79/px2-i18n/fields/multilang_multitext/frontend/',
+			'dir' => 'path/to/vendor/tomk79/px2-i18n/fields/i18n_multitext/frontend/',
 			'file' => array(
 				'multitext.css',
 				'multitext.js',
@@ -97,10 +97,10 @@ $conf->plugins->px2dt->guieditor->custom_fields = array(
 	'summernote'=>array(
 		'backend'=>array(
 			'class' => 'tomk79\\pickles2\\px2I18n\\fields\\summernote',
-			'require' => 'path/to/vendor/tomk79/px2-i18n/fields/multilang_summernote/backend/summernote.js',
+			'require' => 'path/to/vendor/tomk79/px2-i18n/fields/i18n_summernote/backend/summernote.js',
 		),
 		'frontend'=>array(
-			'dir' => 'path/to/vendor/tomk79/px2-i18n/fields/multilang_summernote/frontend/',
+			'dir' => 'path/to/vendor/tomk79/px2-i18n/fields/i18n_summernote/frontend/',
 			'file' => array(
 				'summernote.css',
 				'summernote.js',

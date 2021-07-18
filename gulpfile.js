@@ -13,11 +13,11 @@ let packageJson = require(__dirname+'/package.json');
 
 
 
-// multilangMultitextEditor フィールド を処理
-gulp.task('multilangMultitextEditor:js', function(){
+// i18nMultitextEditor フィールド を処理
+gulp.task('i18nMultitextEditor:js', function(){
 	return webpackStream({
 		mode: 'production',
-		entry: "./src_gulp/fields/multilang_multitext/multitext.js",
+		entry: "./src_gulp/fields/i18n_multitext/multitext.js",
 		output: {
 			filename: "multitext.js"
 		},
@@ -31,27 +31,27 @@ gulp.task('multilangMultitextEditor:js', function(){
 		}
 	}, webpack)
 		.pipe(plumber())
-		.pipe(gulp.dest( './fields/multilang_multitext/frontend/' ))
+		.pipe(gulp.dest( './fields/i18n_multitext/frontend/' ))
 	;
 });
-gulp.task('multilangMultitextEditor:css', function(){
-	return gulp.src(["./src_gulp/fields/multilang_multitext/multitext.scss"])
+gulp.task('i18nMultitextEditor:css', function(){
+	return gulp.src(["./src_gulp/fields/i18n_multitext/multitext.scss"])
 		.pipe(plumber())
 		.pipe(sass({
 			"sourceComments": false
 		}))
 		.pipe(concat('multitext.css'))
-		.pipe(gulp.dest( './fields/multilang_multitext/frontend/' ))
+		.pipe(gulp.dest( './fields/i18n_multitext/frontend/' ))
 	;
 });
 
 
 
-// multilangSummernoteEditor フィールド を処理
-gulp.task('multilangSummernoteEditor:js', function(){
+// i18nSummernoteEditor フィールド を処理
+gulp.task('i18nSummernoteEditor:js', function(){
 	return webpackStream({
 		mode: 'production',
-		entry: "./src_gulp/fields/multilang_summernote/summernote.js",
+		entry: "./src_gulp/fields/i18n_summernote/summernote.js",
 		output: {
 			filename: "summernote.js"
 		},
@@ -65,26 +65,26 @@ gulp.task('multilangSummernoteEditor:js', function(){
 		}
 	}, webpack)
 		.pipe(plumber())
-		.pipe(gulp.dest( './fields/multilang_summernote/frontend/' ))
+		.pipe(gulp.dest( './fields/i18n_summernote/frontend/' ))
 	;
 });
-gulp.task('multilangSummernoteEditor:css', function(){
-	return gulp.src(["./src_gulp/fields/multilang_summernote/summernote.scss"])
+gulp.task('i18nSummernoteEditor:css', function(){
+	return gulp.src(["./src_gulp/fields/i18n_summernote/summernote.scss"])
 		.pipe(plumber())
 		.pipe(sass({
 			"sourceComments": false
 		}))
 		.pipe(concat('summernote.css'))
-		.pipe(gulp.dest( './fields/multilang_summernote/frontend/' ))
+		.pipe(gulp.dest( './fields/i18n_summernote/frontend/' ))
 	;
 });
 
 
-// multilangText フィールド を処理
-gulp.task('multilangText:js', function(){
+// i18nText フィールド を処理
+gulp.task('i18nText:js', function(){
 	return webpackStream({
 		mode: 'production',
-		entry: "./src_gulp/fields/multilang_text/text.js",
+		entry: "./src_gulp/fields/i18n_text/text.js",
 		output: {
 			filename: "text.js"
 		},
@@ -98,26 +98,26 @@ gulp.task('multilangText:js', function(){
 		}
 	}, webpack)
 		.pipe(plumber())
-		.pipe(gulp.dest( './fields/multilang_text/frontend/' ))
+		.pipe(gulp.dest( './fields/i18n_text/frontend/' ))
 	;
 });
-gulp.task('multilangText:css', function(){
-	return gulp.src(["./src_gulp/fields/multilang_text/text.scss"])
+gulp.task('i18nText:css', function(){
+	return gulp.src(["./src_gulp/fields/i18n_text/text.scss"])
 		.pipe(plumber())
 		.pipe(sass({
 			"sourceComments": false
 		}))
 		.pipe(concat('text.css'))
-		.pipe(gulp.dest( './fields/multilang_text/frontend/' ))
+		.pipe(gulp.dest( './fields/i18n_text/frontend/' ))
 	;
 });
 
 
-// multilangHtmlAttrText フィールド を処理
-gulp.task('multilangHtmlAttrText:js', function(){
+// i18nHtmlAttrText フィールド を処理
+gulp.task('i18nHtmlAttrText:js', function(){
 	return webpackStream({
 		mode: 'production',
-		entry: "./src_gulp/fields/multilang_html_attr_text/html_attr_text.js",
+		entry: "./src_gulp/fields/i18n_html_attr_text/html_attr_text.js",
 		output: {
 			filename: "html_attr_text.js"
 		},
@@ -131,30 +131,30 @@ gulp.task('multilangHtmlAttrText:js', function(){
 		}
 	}, webpack)
 		.pipe(plumber())
-		.pipe(gulp.dest( './fields/multilang_html_attr_text/frontend/' ))
+		.pipe(gulp.dest( './fields/i18n_html_attr_text/frontend/' ))
 	;
 });
-gulp.task('multilangHtmlAttrText:css', function(){
-	return gulp.src(["./src_gulp/fields/multilang_html_attr_text/html_attr_text.scss"])
+gulp.task('i18nHtmlAttrText:css', function(){
+	return gulp.src(["./src_gulp/fields/i18n_html_attr_text/html_attr_text.scss"])
 		.pipe(plumber())
 		.pipe(sass({
 			"sourceComments": false
 		}))
 		.pipe(concat('html_attr_text.css'))
-		.pipe(gulp.dest( './fields/multilang_html_attr_text/frontend/' ))
+		.pipe(gulp.dest( './fields/i18n_html_attr_text/frontend/' ))
 	;
 });
 
 
 let _tasks = gulp.parallel(
-	'multilangMultitextEditor:js',
-	'multilangMultitextEditor:css',
-	'multilangSummernoteEditor:js',
-	'multilangSummernoteEditor:css',
-	'multilangText:js',
-	'multilangText:css',
-	'multilangHtmlAttrText:js',
-	'multilangHtmlAttrText:css'
+	'i18nMultitextEditor:js',
+	'i18nMultitextEditor:css',
+	'i18nSummernoteEditor:js',
+	'i18nSummernoteEditor:css',
+	'i18nText:js',
+	'i18nText:css',
+	'i18nHtmlAttrText:js',
+	'i18nHtmlAttrText:css'
 );
 
 // src 中のすべての拡張子を監視して処理

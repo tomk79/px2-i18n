@@ -484,10 +484,10 @@ return call_user_func( function(){
 		'ml_text'=>array(
 			'backend'=>array(
 				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\text',
-				'require' => '../../../../fields/multilang_text/backend/text.js',
+				'require' => '../../../../fields/i18n_text/backend/text.js',
 			),
 			'frontend'=>array(
-				'dir' => '../../../../fields/multilang_text/frontend/',
+				'dir' => '../../../../fields/i18n_text/frontend/',
 				'file' => array(
 					'text.css',
 					'text.js'
@@ -498,10 +498,10 @@ return call_user_func( function(){
 		'ml_html_attr_text'=>array(
 			'backend'=>array(
 				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\html_attr_text',
-				'require' => '../../../../fields/multilang_html_attr_text/backend/html_attr_text.js',
+				'require' => '../../../../fields/i18n_html_attr_text/backend/html_attr_text.js',
 			),
 			'frontend'=>array(
-				'dir' => '../../../../fields/multilang_html_attr_text/frontend/',
+				'dir' => '../../../../fields/i18n_html_attr_text/frontend/',
 				'file' => array(
 					'html_attr_text.css',
 					'html_attr_text.js'
@@ -512,10 +512,10 @@ return call_user_func( function(){
 		'ml_multitext'=>array(
 			'backend'=>array(
 				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\multitext',
-				'require' => '../../../../fields/multilang_multitext/backend/multitext.js',
+				'require' => '../../../../fields/i18n_multitext/backend/multitext.js',
 			),
 			'frontend'=>array(
-				'dir' => '../../../../fields/multilang_multitext/frontend/',
+				'dir' => '../../../../fields/i18n_multitext/frontend/',
 				'file' => array(
 					'multitext.css',
 					'multitext.js',
@@ -526,10 +526,10 @@ return call_user_func( function(){
 		'ml_summernote'=>array(
 			'backend'=>array(
 				'class' => 'tomk79\\pickles2\\px2I18n\\fields\\summernote',
-				'require' => '../../../../fields/multilang_summernote/backend/summernote.js',
+				'require' => '../../../../fields/i18n_summernote/backend/summernote.js',
 			),
 			'frontend'=>array(
-				'dir' => '../../../../fields/multilang_summernote/frontend/',
+				'dir' => '../../../../fields/i18n_summernote/frontend/',
 				'file' => array(
 					'summernote.css',
 					'summernote.js',

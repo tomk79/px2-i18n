@@ -31,10 +31,10 @@
                 "php/"
             ],
             "tomk79\\pickles2\\px2I18n\\fields\\": [
-                "fields/multilang_html_attr_text/backend/",
-                "fields/multilang_text/backend/",
-                "fields/multilang_multitext/backend/",
-                "fields/multilang_summernote/backend/"
+                "fields/i18n_html_attr_text/backend/",
+                "fields/i18n_text/backend/",
+                "fields/i18n_multitext/backend/",
+                "fields/i18n_summernote/backend/"
             ]
         }
     },
