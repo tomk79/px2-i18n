@@ -175,20 +175,20 @@
                                                             "modId": "local:basics/ml_multitext",
                                                             "fields": {
                                                                 "main": {
-                                                                    "src": "多言語マルチテキストです。",
+                                                                    "src": "### Markdown なので、見出しも挿入\n\n多言語マルチテキストです。\n\n- リストはどうでしょう。\n- 何だと解釈されますか？\n",
                                                                     "editor": "markdown",
                                                                     "langs": {
                                                                         "en": {
-                                                                            "src": "Multilingual multitext."
+                                                                            "src": "### Markdown, so insert a heading\n\nMultilingual multitext.\n\n- How about the list?\n- What is it interpreted as?\n"
                                                                         },
                                                                         "zh-CN": {
-                                                                            "src": "多语言多文本。"
+                                                                            "src": "### Markdown，所以插入一个标题\n\n多语言多文本。\n\n- 名单怎么样？\n- 它的解释是什么？\n"
                                                                         },
                                                                         "zh-TW": {
-                                                                            "src": "多語言多文本。"
+                                                                            "src": "### Markdown，所以插入一個標題\n\n多語言多文本。\n\n- 名單怎麼樣？\n- 它的解釋是什麼？\n"
                                                                         },
                                                                         "ko": {
-                                                                            "src": "다국어 멀티 텍스트입니다."
+                                                                            "src": "### Markdown 그래서 제목도 삽입\n\n다국어 멀티 텍스트입니다.\n\n- 목록은 어떨까요?\n- 뭐라고 해석됩니까?\n"
                                                                         }
                                                                     }
                                                                 },

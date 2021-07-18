@@ -140,7 +140,21 @@ module.exports = function( field, initOptions ){
 								'autoTranslator': mod.autoTranslator,
 							} ,
 							function(output){
-								console.log('=-=-=-=-=', output);
+								// console.log('=-=-=-=-=', output);
+								if( !output.status ){
+									alert( '[ERROR] ' + output.message );
+									return;
+								}
+
+								initOptions.updateVal(
+									$elmCurrentLang = $elm.find('[data-lang=editor-lang-'+currentLang+']'),
+									currentLang,
+									mod,
+									{
+										'src': output.result,
+									}
+								);
+
 								return;
 							}
 						);
