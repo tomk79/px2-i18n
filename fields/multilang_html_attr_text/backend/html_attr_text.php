@@ -73,4 +73,29 @@ class html_attr_text extends \broccoliHtmlEditor\fieldBase{
 		return $rtn;
 	}
 
+
+
+	/**
+	 * GPI (Server Side)
+	 */
+	public function gpi($options = array()){
+
+		switch($options['api']){
+			case 'translate':
+				$helper = new \tomk79\pickles2\px2I18n\field_helper();
+				return $helper->machine_translation();
+				break;
+
+			default:
+				return array(
+					'status' => false,
+					'message' => 'ERROR: Unknown API',
+				);
+				break;
+		}
+
+		return false;
+	}
+
+
 }

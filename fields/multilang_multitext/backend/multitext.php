@@ -103,34 +103,9 @@ class multitext extends \broccoliHtmlEditor\fieldBase{
 
 		switch($options['api']){
 			case 'translate':
-				$translate = new \Google\Cloud\Translate\V2\TranslateClient();
-
-				$result = array(
-					'text' => null,
-				);
-				try{
-					$result = $translate->translate(
-						$options['input'],
-						array(
-							'source' => $options['source'],
-							'target' => $options['target'],
-							'format' => $options['format'],
-						)
-					);
-				}catch( \Exception $e ){
-					return array(
-						'status' => false,
-						'message' => $e->getMessage(),
-					);
-				}
-
-				return array(
-					'status' => true,
-					'message' => 'OK',
-					'result' => $result['text'],
-				);
+				$helper = new \tomk79\pickles2\px2I18n\field_helper();
+				return $helper->machine_translation();
 				break;
-
 
 			default:
 				return array(
