@@ -196,7 +196,7 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
-### tomk79/px2-i18n v0.0.1 (リリース日未定)
+### tomk79/px2-i18n v0.0.1 (2021年7月18日)
 
 - 初版リリース。
 
