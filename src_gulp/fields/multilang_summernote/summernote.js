@@ -1,5 +1,6 @@
 window.BroccoliFieldMultilangSummernote = function(broccoli){
 	var $ = require('jquery');
+	var i18nFieldHelper = require('../../_shared/scripts/fieldHelper');
 	var isGlobalJQuery = ( window.jQuery ? true : false );
 
 	function htmlspecialchars(text){

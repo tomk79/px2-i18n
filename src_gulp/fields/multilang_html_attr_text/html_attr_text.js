@@ -1,5 +1,6 @@
 window.BroccoliFieldMultilangHtmlAttrText = function(broccoli){
 	var $ = require('jquery');
+	var i18nFieldHelper = require('../../_shared/scripts/fieldHelper');
 
 	/**
 	 * データを正規化する (Client Side)

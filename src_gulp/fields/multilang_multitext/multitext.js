@@ -1,6 +1,7 @@
 window.BroccoliFieldMultilangMultitext = function(broccoli){
 	var _this = this;
 	var $ = require('jquery');
+	var i18nFieldHelper = require('../../_shared/scripts/fieldHelper');
 	var editorLib = null;
 	try {
 		if(window.ace){
