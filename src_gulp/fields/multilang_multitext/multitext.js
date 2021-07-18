@@ -1,4 +1,4 @@
-window.BroccoliFieldMultilangMultitext = function(broccoli){
+window.BroccoliFieldPx2I18nMultitext = function(broccoli){
 	var _this = this;
 	var $ = require('jquery');
 	var i18nFieldHelper = require('../../_shared/scripts/fieldHelper');

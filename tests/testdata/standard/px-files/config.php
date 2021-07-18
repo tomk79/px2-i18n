@@ -492,7 +492,7 @@ return call_user_func( function(){
 					'text.css',
 					'text.js'
 				),
-				'function' => 'window.BroccoliFieldMultilangText'
+				'function' => 'window.BroccoliFieldPx2I18nText'
 			),
 		),
 		'ml_html_attr_text'=>array(
@@ -506,7 +506,7 @@ return call_user_func( function(){
 					'html_attr_text.css',
 					'html_attr_text.js'
 				),
-				'function' => 'window.BroccoliFieldMultilangHtmlAttrText'
+				'function' => 'window.BroccoliFieldPx2I18nHtmlAttrText'
 			),
 		),
 		'ml_multitext'=>array(
@@ -520,7 +520,7 @@ return call_user_func( function(){
 					'multitext.css',
 					'multitext.js',
 				),
-				'function' => 'window.BroccoliFieldMultilangMultitext'
+				'function' => 'window.BroccoliFieldPx2I18nMultitext'
 			),
 		),
 		'ml_summernote'=>array(
@@ -536,7 +536,7 @@ return call_user_func( function(){
 					"summernote/summernote.min.css",
 					"summernote/summernote.min.js",
 				),
-				'function' => 'window.BroccoliFieldMultilangSummernote'
+				'function' => 'window.BroccoliFieldPx2I18nSummernote'
 			),
 		),
 	);

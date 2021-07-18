@@ -1,4 +1,4 @@
-window.BroccoliFieldMultilangSummernote = function(broccoli){
+window.BroccoliFieldPx2I18nSummernote = function(broccoli){
 	var $ = require('jquery');
 	var i18nFieldHelper = require('../../_shared/scripts/fieldHelper');
 	var isGlobalJQuery = ( window.jQuery ? true : false );
