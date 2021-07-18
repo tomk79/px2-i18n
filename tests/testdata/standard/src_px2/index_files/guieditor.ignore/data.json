@@ -402,16 +402,16 @@
                                                                     "editor": "markdown",
                                                                     "langs": {
                                                                         "en": {
-                                                                            "src": ""
+                                                                            "src": "A one-line multilingual summer note."
                                                                         },
                                                                         "zh-CN": {
-                                                                            "src": ""
+                                                                            "src": "单行多语言夏季笔记。"
                                                                         },
                                                                         "zh-TW": {
-                                                                            "src": ""
+                                                                            "src": "單行多語言夏季筆記。"
                                                                         },
                                                                         "ko": {
-                                                                            "src": ""
+                                                                            "src": "한 줄 다국어 여름 노트북입니다."
                                                                         }
                                                                     }
                                                                 },
@@ -432,20 +432,20 @@
                                                             "modId": "local:basics/ml_summernote",
                                                             "fields": {
                                                                 "main": {
-                                                                    "src": "多言語サマーノートです。",
+                                                                    "src": "<p>多言語サマーノートです。</p><p>Summernote は WYSIWYGツールなので、HTMLを出力します。</p>",
                                                                     "editor": "",
                                                                     "langs": {
                                                                         "en": {
-                                                                            "src": "<p><br></p>"
+                                                                            "src": "<p>It is a multilingual summer note.</p><p> Since Summernote is a WYSIWYG tool, it outputs HTML.</p>"
                                                                         },
                                                                         "zh-CN": {
-                                                                            "src": "<p><br></p>"
+                                                                            "src": "<p>这是一个多语言的夏季笔记。</p><p>由于 Summernote 是一个所见即所得的工具，它输出 HTML。</p>"
                                                                         },
                                                                         "zh-TW": {
-                                                                            "src": "<p><br></p>"
+                                                                            "src": "<p>這是一個多語言的夏季筆記。</p><p>由於 Summernote 是一個所見即所得的工具，它輸出 HTML。</p>"
                                                                         },
                                                                         "ko": {
-                                                                            "src": "<p><br></p>"
+                                                                            "src": "<p>다국어 여름 노트북입니다.</p><p> Summernote는 WYSIWYG 도구, HTML을 출력합니다.</p>"
                                                                         }
                                                                     }
                                                                 },

@@ -5,11 +5,34 @@
             "fields": {
                 "main": [
                     {
-                        "modId": "std-document:basics/text",
+                        "modId": "local:basics/ml_multitext",
                         "fields": {
                             "main": {
                                 "src": "このディレクトリ `/sample_pages/*` に配置されているファイルは、チュートリアルのためのサンプルコード集です。\r\n",
-                                "editor": "markdown"
+                                "editor": "markdown",
+                                "langs": {
+                                    "en": {
+                                        "src": "The files located in this directory `/ sample_pages / *` are a collection of sample code for the tutorial.\r\n"
+                                    },
+                                    "zh-CN": {
+                                        "src": "位于此目录`/sample_pages/*` 中的文件是本教程的示例代码集合。\r\n"
+                                    },
+                                    "zh-TW": {
+                                        "src": "位於此目錄`/sample_pages/*` 中的文件是本教程的示例代碼集合。\r\n"
+                                    },
+                                    "ko": {
+                                        "src": "이 디렉토리`/ sample_pages / *`에 배치되어있는 파일은 튜토리얼의 예제 코드 집입니다.\r\n"
+                                    }
+                                }
+                            },
+                            "paragraph": {
+                                "src": "px2-p"
+                            },
+                            "text-align": {
+                                "src": ""
+                            },
+                            "font-size": {
+                                "src": ""
                             }
                         },
                         "anchor": "",
@@ -18,6 +41,334 @@
                     {
                         "modId": "std-document:lists/index",
                         "fields": []
+                    },
+                    {
+                        "modId": "local:basics/ml_multitext_1l",
+                        "fields": {
+                            "main": {
+                                "src": "## 多言語表現のテストエリア",
+                                "editor": "markdown",
+                                "langs": {
+                                    "en": {
+                                        "src": "## Multilingual test area"
+                                    },
+                                    "zh-CN": {
+                                        "src": "##多语言测试区"
+                                    },
+                                    "zh-TW": {
+                                        "src": "##多語言測試區"
+                                    },
+                                    "ko": {
+                                        "src": "## 다국어 표현의 시험 영역"
+                                    }
+                                }
+                            },
+                            "paragraph": {
+                                "src": "px2-p"
+                            },
+                            "text-align": {
+                                "src": ""
+                            },
+                            "font-size": {
+                                "src": ""
+                            }
+                        },
+                        "anchor": "",
+                        "dec": ""
+                    },
+                    {
+                        "modId": "std-document:grids/grid",
+                        "fields": {
+                            "col": [
+                                {
+                                    "modId": "std-document:grids/grid",
+                                    "fields": {
+                                        "column-width": "1of3",
+                                        "main": [
+                                            {
+                                                "modId": "local:basics/ml_multitext_1l",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "これは1行多言語マルチテキストです。",
+                                                        "editor": "markdown",
+                                                        "langs": {
+                                                            "en": {
+                                                                "src": "This is one line multilingual multitext."
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "这是一行多语言多文本。"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "這是一行多語言多文本。"
+                                                            },
+                                                            "ko": {
+                                                                "src": "이것은 한 줄 다국어 멀티 텍스트입니다."
+                                                            }
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            },
+                                            {
+                                                "modId": "local:basics/ml_multitext",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "### Markdown なので、見出しも挿入\n\n多言語マルチテキストです。\n\n- リストはどうでしょう。\n- 何だと解釈されますか？\n",
+                                                        "editor": "markdown",
+                                                        "langs": {
+                                                            "en": {
+                                                                "src": "### Markdown, so insert a heading\n\nMultilingual multitext.\n\n- How about the list?\n- What is it interpreted as?\n"
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "### Markdown，所以插入一个标题\n\n多语言多文本。\n\n- 名单怎么样？\n- 它的解释是什么？\n"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "### Markdown，所以插入一個標題\n\n多語言多文本。\n\n- 名單怎麼樣？\n- 它的解釋是什麼？\n"
+                                                            },
+                                                            "ko": {
+                                                                "src": "### Markdown 그래서 제목도 삽입\n\n다국어 멀티 텍스트입니다.\n\n- 목록은 어떨까요?\n- 뭐라고 해석됩니까?\n"
+                                                            }
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            }
+                                        ]
+                                    },
+                                    "subModName": "col",
+                                    "anchor": "",
+                                    "dec": ""
+                                },
+                                {
+                                    "modId": "std-document:grids/grid",
+                                    "fields": {
+                                        "column-width": "1of3",
+                                        "main": [
+                                            {
+                                                "modId": "local:basics/ml_text_1l",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "1行多言語プレーンテキストです。",
+                                                        "editor": "text",
+                                                        "langs": {
+                                                            "en": {
+                                                                "src": "One-line multilingual plain text."
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "一行多语言纯文本。"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "一行多語言純文本。"
+                                                            },
+                                                            "ko": {
+                                                                "src": "한 줄 다국어 일반 텍스트입니다."
+                                                            }
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            },
+                                            {
+                                                "modId": "local:basics/ml_text",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "多言語プレーンテキストです。\n\n改行は、改行タグ <br /> に変換されます。",
+                                                        "editor": "text",
+                                                        "langs": {
+                                                            "en": {
+                                                                "src": "Multilingual plain text.\n\nLine breaks are converted to line break tags <br />."
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "多语言纯文本。\n\n换行符转换为换行符标签 <br />。"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "多語言純文本。\n\n換行符轉換為換行符標籤 <br />。"
+                                                            },
+                                                            "ko": {
+                                                                "src": "다국어 일반 텍스트입니다.\n\n줄 바꿈은 줄 바꿈 <br />로 변환됩니다."
+                                                            }
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            },
+                                            {
+                                                "modId": "local:basics/ml_html_attr_text_1l",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "1行分の属性テキスト欄です。 alt 属性などに用います。",
+                                                        "editor": "text",
+                                                        "langs": {
+                                                            "en": {
+                                                                "src": "One line of attribute text field. It is used for alt attribute etc."
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "一行属性文本字段。它用于 alt 属性等。"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "一行屬性文本字段。它用於 alt 屬性等。"
+                                                            },
+                                                            "ko": {
+                                                                "src": "한 줄의 속성 텍스트 필드입니다. alt 속성 등에 사용합니다."
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            },
+                                            {
+                                                "modId": "local:basics/ml_html_attr_text",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "複数行の属性欄です。\n\n場合によって、属性値は複数行のテキストを表現することができます。\n\n改行は、改行コードのまま、<span>HTML特殊文字</span>だけがエスケープ処理を受けます。",
+                                                        "editor": "text",
+                                                        "langs": {
+                                                            "en": {
+                                                                "src": "This is a multi-line attribute field.\n\nIn some cases, attribute values can represent multiple lines of text.\n\nFor line breaks, only <span> HTML special characters </ span> are escaped, leaving the line feed code as it is."
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "这是一个多行属性字段。\n\n在某些情况下，属性值可以表示多行文本。\n\n对于换行符，只有 <span> HTML 特殊字符 </span> 被转义，保持换行代码不变。"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "這是一個多行屬性字段。\n\n在某些情況下，屬性值可以表示多行文本。\n\n對於換行符，只有 <span> HTML 特殊字符 </span> 被轉義，保持換行代碼不變。"
+                                                            },
+                                                            "ko": {
+                                                                "src": "여러 줄 속성 필드입니다.\n\n경우에 따라서 속성 값은 여러 줄의 텍스트를 표현 할 수 있습니다.\n\n줄 바꿈은 개행 코드의 채 <span> HTML 특수 문자 </ span> 만 이스케이프를받습니다."
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            }
+                                        ]
+                                    },
+                                    "subModName": "col",
+                                    "anchor": "",
+                                    "dec": ""
+                                },
+                                {
+                                    "modId": "std-document:grids/grid",
+                                    "fields": {
+                                        "column-width": "1of3",
+                                        "main": [
+                                            {
+                                                "modId": "local:basics/ml_summernote_1l",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "1行多言語サマーノートです。",
+                                                        "editor": "markdown",
+                                                        "langs": {
+                                                            "en": {
+                                                                "src": "A one-line multilingual summer note."
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "单行多语言夏季笔记。"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "單行多語言夏季筆記。"
+                                                            },
+                                                            "ko": {
+                                                                "src": "한 줄 다국어 여름 노트북입니다."
+                                                            }
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            },
+                                            {
+                                                "modId": "local:basics/ml_summernote",
+                                                "fields": {
+                                                    "main": {
+                                                        "src": "<p>多言語サマーノートです。</p><p>Summernote は WYSIWYGツールなので、HTMLを出力します。</p>",
+                                                        "editor": "",
+                                                        "langs": {
+                                                            "en": {
+                                                                "src": "<p>It is a multilingual summer note.</p><p> Since Summernote is a WYSIWYG tool, it outputs HTML.</p>"
+                                                            },
+                                                            "zh-CN": {
+                                                                "src": "<p>这是一个多语言的夏季笔记。</p><p>由于 Summernote 是一个所见即所得的工具，它输出 HTML。</p>"
+                                                            },
+                                                            "zh-TW": {
+                                                                "src": "<p>這是一個多語言的夏季筆記。</p><p>由於 Summernote 是一個所見即所得的工具，它輸出 HTML。</p>"
+                                                            },
+                                                            "ko": {
+                                                                "src": "<p>다국어 여름 노트북입니다.</p><p> Summernote는 WYSIWYG 도구, HTML을 출력합니다.</p>"
+                                                            }
+                                                        }
+                                                    },
+                                                    "paragraph": {
+                                                        "src": "px2-p"
+                                                    },
+                                                    "text-align": {
+                                                        "src": ""
+                                                    },
+                                                    "font-size": {
+                                                        "src": ""
+                                                    }
+                                                },
+                                                "anchor": "",
+                                                "dec": ""
+                                            }
+                                        ]
+                                    },
+                                    "subModName": "col",
+                                    "anchor": "",
+                                    "dec": ""
+                                }
+                            ]
+                        }
                     },
                     {
                         "modId": "std-document:grids/grid",

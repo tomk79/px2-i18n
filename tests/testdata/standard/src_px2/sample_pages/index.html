@@ -1,10 +1,115 @@
 <div class="px2-p">
-<p>このディレクトリ <code>/sample_pages/*</code> に配置されているファイルは、チュートリアルのためのサンプルコード集です。</p>
-
+<?php if( $px->lang() == 'en' && 125 && true ){ ?><p>The files located in this directory <code>/ sample_pages / *</code> are a collection of sample code for the tutorial.</p>
+<?php }elseif( $px->lang() == 'zh-CN' && 100 && true ){ ?><p>位于此目录<code>/sample_pages/*</code> 中的文件是本教程的示例代码集合。</p>
+<?php }elseif( $px->lang() == 'zh-TW' && 100 && true ){ ?><p>位於此目錄<code>/sample_pages/*</code> 中的文件是本教程的示例代碼集合。</p>
+<?php }elseif( $px->lang() == 'ko' && 131 && true ){ ?><p>이 디렉토리<code>/ sample_pages / *</code>에 배치되어있는 파일은 튜토리얼의 예제 코드 집입니다.</p>
+<?php }else{ ?><p>このディレクトリ <code>/sample_pages/*</code> に配置されているファイルは、チュートリアルのためのサンプルコード集です。</p>
+<?php }?>
 </div>
 
 <!-- autoindex -->
 
+<div class="px2-p">
+<?php if( $px->lang() == 'en' && 32 && true ){ ?><h2>Multilingual test area</h2>
+<?php }elseif( $px->lang() == 'zh-CN' && 28 && true ){ ?><h2>多语言测试区</h2>
+<?php }elseif( $px->lang() == 'zh-TW' && 28 && true ){ ?><h2>多語言測試區</h2>
+<?php }elseif( $px->lang() == 'ko' && 43 && true ){ ?><h2>다국어 표현의 시험 영역</h2>
+<?php }else{ ?><h2>多言語表現のテストエリア</h2>
+<?php }?>
+</div>
+<div class="px2-grid">
+
+    <div class="px2-grid__col-1of3"><div class="px2-p">
+<?php if( $px->lang() == 'en' && 48 && true ){ ?><p>This is one line multilingual multitext.</p>
+<?php }elseif( $px->lang() == 'zh-CN' && 41 && true ){ ?><p>这是一行多语言多文本。</p>
+<?php }elseif( $px->lang() == 'zh-TW' && 41 && true ){ ?><p>這是一行多語言多文本。</p>
+<?php }elseif( $px->lang() == 'ko' && 62 && true ){ ?><p>이것은 한 줄 다국어 멀티 텍스트입니다.</p>
+<?php }else{ ?><p>これは1行多言語マルチテキストです。</p>
+<?php }?>
+</div>
+<div class="px2-p">
+<?php if( $px->lang() == 'en' && 146 && true ){ ?><h3>Markdown, so insert a heading</h3>
+<p>Multilingual multitext.</p>
+<ul>
+<li>How about the list?</li>
+<li>What is it interpreted as?</li>
+</ul>
+<?php }elseif( $px->lang() == 'zh-CN' && 147 && true ){ ?><h3>Markdown，所以插入一个标题</h3>
+<p>多语言多文本。</p>
+<ul>
+<li>名单怎么样？</li>
+<li>它的解释是什么？</li>
+</ul>
+<?php }elseif( $px->lang() == 'zh-TW' && 147 && true ){ ?><h3>Markdown，所以插入一個標題</h3>
+<p>多語言多文本。</p>
+<ul>
+<li>名單怎麼樣？</li>
+<li>它的解釋是什麼？</li>
+</ul>
+<?php }elseif( $px->lang() == 'ko' && 169 && true ){ ?><h3>Markdown 그래서 제목도 삽입</h3>
+<p>다국어 멀티 텍스트입니다.</p>
+<ul>
+<li>목록은 어떨까요?</li>
+<li>뭐라고 해석됩니까?</li>
+</ul>
+<?php }else{ ?><h3>Markdown なので、見出しも挿入</h3>
+<p>多言語マルチテキストです。</p>
+<ul>
+<li>リストはどうでしょう。</li>
+<li>何だと解釈されますか？</li>
+</ul>
+<?php }?>
+</div>
+</div>
+
+    <div class="px2-grid__col-1of3"><div class="px2-p">
+<?php if( $px->lang() == 'en' && 33 ){ ?>One-line multilingual plain text.<?php }elseif( $px->lang() == 'zh-CN' && 27 ){ ?>一行多语言纯文本。<?php }elseif( $px->lang() == 'zh-TW' && 27 ){ ?>一行多語言純文本。<?php }elseif( $px->lang() == 'ko' && 44 ){ ?>한 줄 다국어 일반 텍스트입니다.<?php }else{ ?>1行多言語プレーンテキストです。<?php }?>
+</div>
+<div class="px2-p">
+<?php if( $px->lang() == 'en' && 94 ){ ?>Multilingual plain text.<br /><br />Line breaks are converted to line break tags &lt;br /&gt;.<?php }elseif( $px->lang() == 'zh-CN' && 82 ){ ?>多语言纯文本。<br /><br />换行符转换为换行符标签 &lt;br /&gt;。<?php }elseif( $px->lang() == 'zh-TW' && 82 ){ ?>多語言純文本。<br /><br />換行符轉換為換行符標籤 &lt;br /&gt;。<?php }elseif( $px->lang() == 'ko' && 105 ){ ?>다국어 일반 텍스트입니다.<br /><br />줄 바꿈은 줄 바꿈 &lt;br /&gt;로 변환됩니다.<?php }else{ ?>多言語プレーンテキストです。<br /><br />改行は、改行タグ &lt;br /&gt; に変換されます。<?php }?>
+</div>
+<div>
+<?php if( $px->lang() == 'en' && 67 ){ ?>One line of attribute text field. It is used for alt attribute etc.<?php }elseif( $px->lang() == 'zh-CN' && 53 ){ ?>一行属性文本字段。它用于 alt 属性等。<?php }elseif( $px->lang() == 'zh-TW' && 53 ){ ?>一行屬性文本字段。它用於 alt 屬性等。<?php }elseif( $px->lang() == 'ko' && 79 ){ ?>한 줄의 속성 텍스트 필드입니다. alt 속성 등에 사용합니다.<?php }else{ ?>1行分の属性テキスト欄です。 alt 属性などに用います。<?php }?>
+</div>
+<div>
+<?php if( $px->lang() == 'en' && 233 ){ ?>This is a multi-line attribute field.
+
+In some cases, attribute values can represent multiple lines of text.
+
+For line breaks, only &lt;span&gt; HTML special characters &lt;/ span&gt; are escaped, leaving the line feed code as it is.<?php }elseif( $px->lang() == 'zh-CN' && 203 ){ ?>这是一个多行属性字段。
+
+在某些情况下，属性值可以表示多行文本。
+
+对于换行符，只有 &lt;span&gt; HTML 特殊字符 &lt;/span&gt; 被转义，保持换行代码不变。<?php }elseif( $px->lang() == 'zh-TW' && 203 ){ ?>這是一個多行屬性字段。
+
+在某些情況下，屬性值可以表示多行文本。
+
+對於換行符，只有 &lt;span&gt; HTML 特殊字符 &lt;/span&gt; 被轉義，保持換行代碼不變。<?php }elseif( $px->lang() == 'ko' && 244 ){ ?>여러 줄 속성 필드입니다.
+
+경우에 따라서 속성 값은 여러 줄의 텍스트를 표현 할 수 있습니다.
+
+줄 바꿈은 개행 코드의 채 &lt;span&gt; HTML 특수 문자 &lt;/ span&gt; 만 이스케이프를받습니다.<?php }else{ ?>複数行の属性欄です。
+
+場合によって、属性値は複数行のテキストを表現することができます。
+
+改行は、改行コードのまま、&lt;span&gt;HTML特殊文字&lt;/span&gt;だけがエスケープ処理を受けます。<?php }?>
+</div>
+</div>
+
+    <div class="px2-grid__col-1of3"><div class="px2-p">
+<?php if( $px->lang() == 'en' && 44 && true ){ ?><p>A one-line multilingual summer note.</p>
+<?php }elseif( $px->lang() == 'zh-CN' && 38 && true ){ ?><p>单行多语言夏季笔记。</p>
+<?php }elseif( $px->lang() == 'zh-TW' && 38 && true ){ ?><p>單行多語言夏季筆記。</p>
+<?php }elseif( $px->lang() == 'ko' && 52 && true ){ ?><p>한 줄 다국어 여름 노트북입니다.</p>
+<?php }else{ ?><p>1行多言語サマーノートです。</p>
+<?php }?>
+</div>
+<div class="px2-p">
+<?php if( $px->lang() == 'en' && 100 && true ){ ?><p>It is a multilingual summer note.</p><p> Since Summernote is a WYSIWYG tool, it outputs HTML.</p><?php }elseif( $px->lang() == 'zh-CN' && 124 && true ){ ?><p>这是一个多语言的夏季笔记。</p><p>由于 Summernote 是一个所见即所得的工具，它输出 HTML。</p><?php }elseif( $px->lang() == 'zh-TW' && 124 && true ){ ?><p>這是一個多語言的夏季筆記。</p><p>由於 Summernote 是一個所見即所得的工具，它輸出 HTML。</p><?php }elseif( $px->lang() == 'ko' && 105 && true ){ ?><p>다국어 여름 노트북입니다.</p><p> Summernote는 WYSIWYG 도구, HTML을 출력합니다.</p><?php }else{ ?><p>多言語サマーノートです。</p><p>Summernote は WYSIWYGツールなので、HTMLを出力します。</p><?php }?>
+</div>
+</div>
+
+</div>
 <div class="px2-grid">
 
     <div class="px2-grid__col-1of3"><div class="px2-p">
