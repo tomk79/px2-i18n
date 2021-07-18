@@ -15,6 +15,7 @@
     <div class="broccoli-field-px2-i18n__sub-langs">
         {% for lang in mod.subLangs %}
         <div data-lang="editor-lang-{{ lang }}">
+            <p>Language: <strong>{{ lang }}</strong></p>
             <p><button type="button" class="px2-btn" data-btn="auto-translate">自動翻訳</button></p>
         </div>
         {% endfor %}

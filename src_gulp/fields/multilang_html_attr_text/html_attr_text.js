@@ -1,6 +1,7 @@
 window.BroccoliFieldPx2I18nHtmlAttrText = function(broccoli){
 	var $ = require('jquery');
-	var i18nFieldHelper = require('../../_shared/scripts/fieldHelper');
+	var i18nFieldHelper = new (require('../../_shared/scripts/fieldHelper'))(this, {
+	});
 
 	/**
 	 * データを正規化する (Client Side)
