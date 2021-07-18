@@ -247,18 +247,19 @@
                                                             "fields": {
                                                                 "main": {
                                                                     "src": "1行多言語プレーンテキストです。",
+                                                                    "editor": "text",
                                                                     "langs": {
                                                                         "en": {
-                                                                            "src": ""
+                                                                            "src": "One-line multilingual plain text."
                                                                         },
                                                                         "zh-CN": {
-                                                                            "src": ""
+                                                                            "src": "一行多语言纯文本。"
                                                                         },
                                                                         "zh-TW": {
-                                                                            "src": ""
+                                                                            "src": "一行多語言純文本。"
                                                                         },
                                                                         "ko": {
-                                                                            "src": ""
+                                                                            "src": "한 줄 다국어 일반 텍스트입니다."
                                                                         }
                                                                     }
                                                                 },
@@ -279,20 +280,20 @@
                                                             "modId": "local:basics/ml_text",
                                                             "fields": {
                                                                 "main": {
-                                                                    "src": "多言語プレーンテキストです。",
-                                                                    "editor": "",
+                                                                    "src": "多言語プレーンテキストです。\n\n改行は、改行タグ <br /> に変換されます。",
+                                                                    "editor": "text",
                                                                     "langs": {
                                                                         "en": {
-                                                                            "src": ""
+                                                                            "src": "Multilingual plain text.\n\nLine breaks are converted to line break tags <br />."
                                                                         },
                                                                         "zh-CN": {
-                                                                            "src": ""
+                                                                            "src": "多语言纯文本。\n\n换行符转换为换行符标签 <br />。"
                                                                         },
                                                                         "zh-TW": {
-                                                                            "src": ""
+                                                                            "src": "多語言純文本。\n\n換行符轉換為換行符標籤 <br />。"
                                                                         },
                                                                         "ko": {
-                                                                            "src": ""
+                                                                            "src": "다국어 일반 텍스트입니다.\n\n줄 바꿈은 줄 바꿈 <br />로 변환됩니다."
                                                                         }
                                                                     }
                                                                 },
