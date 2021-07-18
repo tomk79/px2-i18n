@@ -1,3 +1,37 @@
 .broccoli-field-px2-i18n {
     display: block;
+    p ,
+    ul ,
+    ol ,
+    pre {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+
+    &__sub-lang-selector {
+        text-align: right;
+    }
+    &__main-block {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__default-lang {
+        width: calc(50% - 10px);
+    }
+    &__sub-langs {
+        width: calc(50% - 10px);
+        &-body {
+            margin-bottom: 20px;
+        }
+    }
+
+    &--default-only {
+        .broccoli-field-px2-i18n__default-lang {
+            width: 100%;
+        }
+        .broccoli-field-px2-i18n__sub-langs {
+            display: none;
+        }
+    }
 }

@@ -1,7 +1,4 @@
 <div class="broccoli-field-px2-i18n">
-    <div class="broccoli-field-px2-i18n__default-lang">
-        <div data-lang="editor-default-lang"></div>
-    </div>
     {% if mod.subLangs and mod.subLangs.length %}
     <div class="broccoli-field-px2-i18n__sub-lang-selector">
         <select class="px2-input">
@@ -12,13 +9,26 @@
             <option value="_all">all</option>
         </select>
     </div>
-    <div class="broccoli-field-px2-i18n__sub-langs">
-        {% for lang in mod.subLangs %}
-        <div data-lang="editor-lang-{{ lang }}">
-            <p>Language: <strong>{{ lang }}</strong></p>
-            <p><button type="button" class="px2-btn" data-btn="auto-translate">自動翻訳</button></p>
-        </div>
-        {% endfor %}
-    </div>
     {% endif %}
+    <div class="broccoli-field-px2-i18n__main-block">
+        <div class="broccoli-field-px2-i18n__default-lang">
+            {% if mod.defaultLang %}
+            <p>Default Language: <strong>{{ mod.defaultLang }}</strong></p>
+            {% endif %}
+            <div class="broccoli-field-px2-i18n__default-lang-body">
+                <div data-lang="editor-default-lang"></div>
+            </div>
+        </div>
+        {% if mod.subLangs and mod.subLangs.length %}
+        <div class="broccoli-field-px2-i18n__sub-langs">
+            {% for lang in mod.subLangs %}
+            <div class="broccoli-field-px2-i18n__sub-langs-body">
+                <p>Language: <strong>{{ lang }}</strong></p>
+                <div data-lang="editor-lang-{{ lang }}"></div>
+                <p><button type="button" class="px2-btn" data-btn="auto-translate">自動翻訳</button></p>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
 </div>

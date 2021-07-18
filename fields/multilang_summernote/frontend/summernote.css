@@ -1,5 +1,26 @@
 .broccoli-field-px2-i18n {
   display: block; }
+  .broccoli-field-px2-i18n p,
+  .broccoli-field-px2-i18n ul,
+  .broccoli-field-px2-i18n ol,
+  .broccoli-field-px2-i18n pre {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em; }
+  .broccoli-field-px2-i18n__sub-lang-selector {
+    text-align: right; }
+  .broccoli-field-px2-i18n__main-block {
+    display: flex;
+    justify-content: space-between; }
+  .broccoli-field-px2-i18n__default-lang {
+    width: calc(50% - 10px); }
+  .broccoli-field-px2-i18n__sub-langs {
+    width: calc(50% - 10px); }
+    .broccoli-field-px2-i18n__sub-langs-body {
+      margin-bottom: 20px; }
+  .broccoli-field-px2-i18n--default-only .broccoli-field-px2-i18n__default-lang {
+    width: 100%; }
+  .broccoli-field-px2-i18n--default-only .broccoli-field-px2-i18n__sub-langs {
+    display: none; }
 
 .broccoli-field-multilang-summernote textarea {
   width: 100%;

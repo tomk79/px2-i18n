@@ -93,6 +93,9 @@ module.exports = function( field, initOptions ){
 		});
 
 
+		var $mainBlock = $elm.find('.broccoli-field-px2-i18n__main-block');
+
+
 		// --------------------------------------
 		// 副言語
 		if( mod.subLangs && mod.subLangs.length ){
@@ -121,6 +124,7 @@ module.exports = function( field, initOptions ){
 				);
 
 				$elmCurrentLang
+					.parent()
 					.find('button[data-btn=auto-translate]')
 					.attr({'data-lang': mod.subLangs[idx]})
 					.on('click', function(){
@@ -181,18 +185,22 @@ module.exports = function( field, initOptions ){
 				var $this = $(this);
 				var selectedValue = $this.val();
 				if( selectedValue == '_all' ){
-					$divSubLangs.find( '[data-lang]' ).show();
+					$divSubLangs.find('.broccoli-field-px2-i18n__sub-langs-body').show();
+					$mainBlock.removeClass('broccoli-field-px2-i18n--default-only');
 					return;
 				}
-				$divSubLangs.find( '[data-lang]' ).hide();
+				$divSubLangs.find( '.broccoli-field-px2-i18n__sub-langs-body' ).hide();
 				if( selectedValue == '' ){
+					$mainBlock.addClass('broccoli-field-px2-i18n--default-only');
 					return;
 				}
-				$divSubLangs.find( '[data-lang=editor-lang-'+selectedValue+']' ).show();
+				$divSubLangs.find( '[data-lang=editor-lang-'+selectedValue+']' ).parent().show();
+				$mainBlock.removeClass('broccoli-field-px2-i18n--default-only');
 
 			});
 			setTimeout(function(){
-				$divSubLangs.find( '[data-lang]' ).hide();
+				$mainBlock.addClass('broccoli-field-px2-i18n--default-only');
+				$divSubLangs.find( '.broccoli-field-px2-i18n__sub-langs-body' ).hide();
 			}, 0);
 		}
 
