@@ -6,10 +6,11 @@ module.exports = function( field, initOptions ){
 	initOptions.val = initOptions.val || function(){return;};
 	initOptions.updateVal = initOptions.updateVal || function(){return;};
 
-	var _this = this;
-	var $ = require('jquery');
-	var px2style = new (require('px2style'))();
-	var templates = {
+	const _this = this;
+	const $ = require('jquery');
+	const it79 = require('iterate79');
+	const px2style = new (require('px2style'))();
+	const templates = {
 		'frame': require('..//templates/frame.twig'),
 	};
 
@@ -149,7 +150,6 @@ module.exports = function( field, initOptions ){
 								'source': (mod.defaultLang ? mod.defaultLang : 'ja'),
 								'target': currentLang,
 								'format': (editor=='text' || editor=='markdown' ? 'text' : 'html'),
-								'autoTranslator': mod.autoTranslator,
 							} ,
 							function(output){
 								// console.log('=-=-=-=-=', output);
@@ -181,12 +181,120 @@ module.exports = function( field, initOptions ){
 
 			}
 
+			$elm.find('[data-btn="clear-all"]')
+				.on('click', function(){
+					// --------------------------------------
+					// すべてリセット
+					var $this = $(this);
+					$this.attr({'disabled': 'disabled'});
+					px2style.loading();
+					it79.ary(
+						mod.subLangs,
+						2,
+						function(it, row, idx){
+							// console.log(idx, row);
+
+							var value = initOptions.val(
+								$elm.find('[data-lang=editor-lang-'+row+']'),
+								row,
+								mod
+							);
+							// console.log(idx, row, value);
+							value.src = '';
+
+							initOptions.updateVal(
+								$elm.find('[data-lang=editor-lang-'+row+']'),
+								row,
+								mod,
+								value
+							);
+
+							setTimeout(function(){
+								it.next();
+							}, 10);
+						},
+						function(){
+							console.log('done!');
+							px2style.closeLoading();
+							$this.removeAttr('disabled');
+						}
+					);
+				});
+			$elm.find('[data-btn="auto-translate-all"]')
+				.on('click', function(){
+					// --------------------------------------
+					// すべて自動翻訳
+					var $this = $(this);
+					$this.attr({'disabled': 'disabled'});
+					px2style.loading();
+					it79.ary(
+						mod.subLangs,
+						2,
+						function(it, row, idx){
+							// console.log(idx, row);
+
+							var value = initOptions.val(
+								$elm.find('[data-lang=editor-default-lang]'),
+								null,
+								mod
+							);
+							// console.log(idx, row, value);
+
+							field.callGpi(
+								{
+									'api': 'translate',
+									'input': value.src,
+									'source': (mod.defaultLang ? mod.defaultLang : 'ja'),
+									'target': row,
+									'format': (value.editor=='text' || value.editor=='markdown' ? 'text' : 'html'),
+								} ,
+								function(output){
+									// console.log('=-=-=-=-=', output);
+									if( !output.status ){
+										console.error( '[ERROR] ' + output.message );
+										alert( '[ERROR] ' + output.message );
+										it.next();
+										return;
+									}
+
+									initOptions.updateVal(
+										$elm.find('[data-lang=editor-lang-'+row+']'),
+										row,
+										mod,
+										{
+											'src': output.result,
+										}
+									);
+
+									setTimeout(function(){
+										it.next();
+									}, 10);
+									return;
+								}
+							);
+
+						},
+						function(){
+							console.log('done!');
+							px2style.closeLoading();
+							$this.removeAttr('disabled');
+						}
+					);
+				});
+
+
 			$selectLang.on('change', function(){
 				var $this = $(this);
 				var selectedValue = $this.val();
+
+				$elm.find('[data-btn="clear-all"]').hide();
+				$elm.find('[data-btn="auto-translate-all"]').hide();
+
 				if( selectedValue == '_all' ){
 					$divSubLangs.find('.broccoli-field-px2-i18n__sub-langs-body').show();
 					$mainBlock.removeClass('broccoli-field-px2-i18n--default-only');
+					$elm.find('[data-btn="clear-all"]').show();
+					$elm.find('[data-btn="auto-translate-all"]').show();
 					return;
 				}
 				$divSubLangs.find( '.broccoli-field-px2-i18n__sub-langs-body' ).hide();
@@ -201,6 +309,8 @@ module.exports = function( field, initOptions ){
 			setTimeout(function(){
 				$mainBlock.addClass('broccoli-field-px2-i18n--default-only');
 				$divSubLangs.find( '.broccoli-field-px2-i18n__sub-langs-body' ).hide();
+				$elm.find('[data-btn="clear-all"]').hide();
+				$elm.find('[data-btn="auto-translate-all"]').hide();
 			}, 0);
 		}
 

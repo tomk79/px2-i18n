@@ -1,6 +1,8 @@
 <div class="broccoli-field-px2-i18n">
     {% if mod.subLangs and mod.subLangs.length %}
     <div class="broccoli-field-px2-i18n__sub-lang-selector">
+        <button type="button" class="px2-btn" data-btn="clear-all">すべてリセット</button>
+        <button type="button" class="px2-btn" data-btn="auto-translate-all">すべて自動翻訳</button>
         <select class="px2-input">
             <option value="">select language...</option>
             {% for lang in mod.subLangs %}

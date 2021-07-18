@@ -16,7 +16,7 @@
   .broccoli-field-px2-i18n__sub-langs {
     width: calc(50% - 10px); }
     .broccoli-field-px2-i18n__sub-langs-body {
-      margin-bottom: 20px; }
+      margin-bottom: 2em; }
   .broccoli-field-px2-i18n--default-only .broccoli-field-px2-i18n__default-lang {
     width: 100%; }
   .broccoli-field-px2-i18n--default-only .broccoli-field-px2-i18n__sub-langs {
