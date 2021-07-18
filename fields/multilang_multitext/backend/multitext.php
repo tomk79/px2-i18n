@@ -104,7 +104,7 @@ class multitext extends \broccoliHtmlEditor\fieldBase{
 		switch($options['api']){
 			case 'translate':
 				$helper = new \tomk79\pickles2\px2I18n\field_helper();
-				return $helper->machine_translation();
+				return $helper->machine_translation($options);
 				break;
 
 			default:

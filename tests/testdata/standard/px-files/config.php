@@ -487,7 +487,7 @@ return call_user_func( function(){
 				'require' => '../../../../fields/multilang_text/backend/text.js',
 			),
 			'frontend'=>array(
-				'dir' => '../../../../fields/multilang_text/',
+				'dir' => '../../../../fields/multilang_text/frontend/',
 				'file' => array(
 					'text.css',
 					'text.js'
@@ -501,7 +501,7 @@ return call_user_func( function(){
 				'require' => '../../../../fields/multilang_html_attr_text/backend/html_attr_text.js',
 			),
 			'frontend'=>array(
-				'dir' => '../../../../fields/multilang_html_attr_text/',
+				'dir' => '../../../../fields/multilang_html_attr_text/frontend/',
 				'file' => array(
 					'html_attr_text.css',
 					'html_attr_text.js'
@@ -515,7 +515,7 @@ return call_user_func( function(){
 				'require' => '../../../../fields/multilang_multitext/backend/multitext.js',
 			),
 			'frontend'=>array(
-				'dir' => '../../../../fields/multilang_multitext/',
+				'dir' => '../../../../fields/multilang_multitext/frontend/',
 				'file' => array(
 					'multitext.css',
 					'multitext.js',
@@ -529,7 +529,7 @@ return call_user_func( function(){
 				'require' => '../../../../fields/multilang_summernote/backend/summernote.js',
 			),
 			'frontend'=>array(
-				'dir' => '../../../../fields/multilang_summernote/',
+				'dir' => '../../../../fields/multilang_summernote/frontend/',
 				'file' => array(
 					'summernote.css',
 					'summernote.js',

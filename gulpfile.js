@@ -31,7 +31,7 @@ gulp.task('multilangMultitextEditor:js', function(){
 		}
 	}, webpack)
 		.pipe(plumber())
-		.pipe(gulp.dest( './fields/multilang_multitext/' ))
+		.pipe(gulp.dest( './fields/multilang_multitext/frontend/' ))
 	;
 });
 gulp.task('multilangMultitextEditor:css', function(){
@@ -41,7 +41,7 @@ gulp.task('multilangMultitextEditor:css', function(){
 			"sourceComments": false
 		}))
 		.pipe(concat('multitext.css'))
-		.pipe(gulp.dest( './fields/multilang_multitext/' ))
+		.pipe(gulp.dest( './fields/multilang_multitext/frontend/' ))
 	;
 });
 
@@ -65,7 +65,7 @@ gulp.task('multilangSummernoteEditor:js', function(){
 		}
 	}, webpack)
 		.pipe(plumber())
-		.pipe(gulp.dest( './fields/multilang_summernote/' ))
+		.pipe(gulp.dest( './fields/multilang_summernote/frontend/' ))
 	;
 });
 gulp.task('multilangSummernoteEditor:css', function(){
@@ -75,7 +75,7 @@ gulp.task('multilangSummernoteEditor:css', function(){
 			"sourceComments": false
 		}))
 		.pipe(concat('summernote.css'))
-		.pipe(gulp.dest( './fields/multilang_summernote/' ))
+		.pipe(gulp.dest( './fields/multilang_summernote/frontend/' ))
 	;
 });
 
@@ -98,7 +98,7 @@ gulp.task('multilangText:js', function(){
 		}
 	}, webpack)
 		.pipe(plumber())
-		.pipe(gulp.dest( './fields/multilang_text/' ))
+		.pipe(gulp.dest( './fields/multilang_text/frontend/' ))
 	;
 });
 gulp.task('multilangText:css', function(){
@@ -108,7 +108,7 @@ gulp.task('multilangText:css', function(){
 			"sourceComments": false
 		}))
 		.pipe(concat('text.css'))
-		.pipe(gulp.dest( './fields/multilang_text/' ))
+		.pipe(gulp.dest( './fields/multilang_text/frontend/' ))
 	;
 });
 
@@ -131,7 +131,7 @@ gulp.task('multilangHtmlAttrText:js', function(){
 		}
 	}, webpack)
 		.pipe(plumber())
-		.pipe(gulp.dest( './fields/multilang_html_attr_text/' ))
+		.pipe(gulp.dest( './fields/multilang_html_attr_text/frontend/' ))
 	;
 });
 gulp.task('multilangHtmlAttrText:css', function(){
@@ -141,7 +141,7 @@ gulp.task('multilangHtmlAttrText:css', function(){
 			"sourceComments": false
 		}))
 		.pipe(concat('html_attr_text.css'))
-		.pipe(gulp.dest( './fields/multilang_html_attr_text/' ))
+		.pipe(gulp.dest( './fields/multilang_html_attr_text/frontend/' ))
 	;
 });
 
