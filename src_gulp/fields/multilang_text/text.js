@@ -7,30 +7,7 @@ window.BroccoliFieldPx2I18nText = function(broccoli){
 	 * このメソッドは、同期的に振る舞います。
 	 */
 	this.normalizeData = function( fieldData, mode ){
-		// 編集画面用にデータを初期化。
-		var rtn = {};
-		if( typeof(fieldData) === typeof({}) ){
-			rtn = fieldData;
-		}else if( typeof(fieldData) === typeof('') ){
-			rtn.src = fieldData;
-			rtn.editor = 'markdown';
-		}
-		if(!rtn || typeof(rtn) != typeof({})){
-			data = {
-				src: '',
-				editor: ''
-			};
-		}
-		if(typeof(rtn.src) != typeof('')){
-			rtn.src = '';
-		}
-		if(typeof(rtn.editor) != typeof('')){
-			rtn.editor = '';
-		}
-		if(typeof(rtn.langs) != typeof({})){
-			rtn.langs = {};
-		}
-		return rtn;
+		return i18nFieldHelper.normalizeData( fieldData, mode );
 	}
 
 	/**

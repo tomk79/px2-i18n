@@ -3,43 +3,12 @@ window.BroccoliFieldPx2I18nSummernote = function(broccoli){
 	var i18nFieldHelper = require('../../_shared/scripts/fieldHelper');
 	var isGlobalJQuery = ( window.jQuery ? true : false );
 
-	function htmlspecialchars(text){
-		text = text.split(/\&/g).join('&amp;');
-		text = text.split(/\</g).join('&lt;');
-		text = text.split(/\>/g).join('&gt;');
-		text = text.split(/\"/g).join('&quot;');
-		return text;
-	}
-
 	/**
 	 * データを正規化する (Client Side)
 	 * このメソッドは、同期的に振る舞います。
 	 */
 	this.normalizeData = function( fieldData, mode ){
-		// 編集画面用にデータを初期化。
-		var rtn = {};
-		if( typeof(fieldData) === typeof({}) ){
-			rtn = fieldData;
-		}else if( typeof(fieldData) === typeof('') ){
-			rtn.src = fieldData;
-			rtn.editor = 'markdown';
-		}
-		if(!rtn || typeof(rtn) != typeof({})){
-			data = {
-				src: '',
-				editor: ''
-			};
-		}
-		if(typeof(rtn.src) != typeof('')){
-			rtn.src = '';
-		}
-		if(typeof(rtn.editor) != typeof('')){
-			rtn.editor = '';
-		}
-		if(typeof(rtn.langs) != typeof({})){
-			rtn.langs = {};
-		}
-		return rtn;
+		return i18nFieldHelper.normalizeData( fieldData, mode );
 	}
 
 	/**
@@ -111,7 +80,7 @@ window.BroccoliFieldPx2I18nSummernote = function(broccoli){
 					break;
 				case 'text':
 					// HTML特殊文字変換
-					data.src = htmlspecialchars(data.src);
+					data.src = i18nFieldHelper.h(data.src);
 
 					// 改行コードは改行タグに変換
 					data.src = data.src.split(/\r\n|\r|\n/g).join('<br />');
@@ -145,9 +114,9 @@ window.BroccoliFieldPx2I18nSummernote = function(broccoli){
 				if( !lang ){
 					$div
 						.append( $('<p>')
-							.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+htmlspecialchars(fieldName)+'" value="" /> HTML</label></span>'))
-							.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+htmlspecialchars(fieldName)+'" value="text" /> テキスト</label></span>'))
-							.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+htmlspecialchars(fieldName)+'" value="markdown" /> Markdown</label></span>'))
+							.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+i18nFieldHelper.h(fieldName)+'" value="" /> HTML</label></span>'))
+							.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+i18nFieldHelper.h(fieldName)+'" value="text" /> テキスト</label></span>'))
+							.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+i18nFieldHelper.h(fieldName)+'" value="markdown" /> Markdown</label></span>'))
 						)
 					;
 					$div.find('input[type=radio][name=editor-'+fieldName+'][value="'+data.editor+'"]').attr({'checked':'checked'});
