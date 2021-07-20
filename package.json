@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "csv-loader": "^3.0.3",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-browserify": "^0.5.1",

@@ -11,6 +11,23 @@ let plumber = require("gulp-plumber");
 let rename = require("gulp-rename");
 let packageJson = require(__dirname+'/package.json');
 
+let defaultWebpackModuleSetting = {
+	rules:[
+		{
+			test: /\.twig$/,
+			use:['twig-loader']
+		},
+		{
+			test: /\.csv$/,
+			loader: 'csv-loader',
+			options: {
+				dynamicTyping: true,
+				header: true,
+				skipEmptyLines: true
+			}
+		}
+	]
+};
 
 
 // i18nMultitextEditor フィールド を処理
@@ -21,14 +38,7 @@ gulp.task('i18nMultitextEditor:js', function(){
 		output: {
 			filename: "multitext.js"
 		},
-		module:{
-			rules:[
-				{
-					test:/\.twig$/,
-					use:['twig-loader']
-				}
-			]
-		}
+		module: defaultWebpackModuleSetting,
 	}, webpack)
 		.pipe(plumber())
 		.pipe(gulp.dest( './fields/i18n_multitext/frontend/' ))
@@ -55,14 +65,7 @@ gulp.task('i18nSummernoteEditor:js', function(){
 		output: {
 			filename: "summernote.js"
 		},
-		module:{
-			rules:[
-				{
-					test:/\.twig$/,
-					use:['twig-loader']
-				}
-			]
-		}
+		module: defaultWebpackModuleSetting,
 	}, webpack)
 		.pipe(plumber())
 		.pipe(gulp.dest( './fields/i18n_summernote/frontend/' ))
@@ -88,14 +91,7 @@ gulp.task('i18nText:js', function(){
 		output: {
 			filename: "text.js"
 		},
-		module:{
-			rules:[
-				{
-					test:/\.twig$/,
-					use:['twig-loader']
-				}
-			]
-		}
+		module: defaultWebpackModuleSetting,
 	}, webpack)
 		.pipe(plumber())
 		.pipe(gulp.dest( './fields/i18n_text/frontend/' ))
@@ -121,14 +117,7 @@ gulp.task('i18nHtmlAttrText:js', function(){
 		output: {
 			filename: "html_attr_text.js"
 		},
-		module:{
-			rules:[
-				{
-					test:/\.twig$/,
-					use:['twig-loader']
-				}
-			]
-		}
+		module: defaultWebpackModuleSetting,
 	}, webpack)
 		.pipe(plumber())
 		.pipe(gulp.dest( './fields/i18n_html_attr_text/frontend/' ))
