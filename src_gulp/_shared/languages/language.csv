@@ -1,0 +1,12 @@
+,"en","ja","zh-CN","zh-TW","ko"
+"lang:en","English","英語 - English","英语 – English","英語 – English","영어 – English"
+"lang:ja","Japanese","日本語 – Japanese","日本语 – Japanese","日本語 – Japanese","일본어 – Japanese"
+"lang:zh-CN","Chinese (Simplified)","中国語(簡体) – Chinese","中文(简体) – Chinese","中文(簡體) – Chinese","중국어 (간체) – Chinese"
+"lang:zh-TW","Chinese (Traditional)","中国語(繁体) – Chinese","中文(繁体) – Chinese","中文(繁體) – Chinese","중국어 (번체) – Chinese"
+"lang:ko","Korean","韓国語 – Korean","韩国语 – Korean","韓國語 – Korean","한국어 – Korean"
+"btn:reset-all","Reset All","すべてリセット","重置全部","重置全部","재설정"
+"btn:machine-translation","Machine Translation","機械翻訳","机器翻译","機器翻譯","기계 번역"
+"btn:machine-translate-all","Machine Translate All","すべて機械翻訳","全部机器翻译","全部機器翻譯","모든 기계 번역"
+"label:html","HTML",,,,
+"label:text","Plain Text","テキスト",,,
+"label:markdown","Markdown",,,,

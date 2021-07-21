@@ -15,19 +15,18 @@ let defaultWebpackModuleSetting = {
 	rules:[
 		{
 			test: /\.twig$/,
-			use:['twig-loader']
+			use:['twig-loader'],
 		},
 		{
 			test: /\.csv$/,
-			loader: 'csv-loader',
-			options: {
-				dynamicTyping: true,
-				header: true,
-				skipEmptyLines: true
-			}
-		}
+			use:['twig-loader'],
+		},
 	]
 };
+
+var externalNodeModules = {};
+externalNodeModules['fs'] = 'commonjs ' + 'fs';
+
 
 
 // i18nMultitextEditor フィールド を処理
@@ -39,6 +38,7 @@ gulp.task('i18nMultitextEditor:js', function(){
 			filename: "multitext.js"
 		},
 		module: defaultWebpackModuleSetting,
+		externals: externalNodeModules,
 	}, webpack)
 		.pipe(plumber())
 		.pipe(gulp.dest( './fields/i18n_multitext/frontend/' ))
@@ -66,6 +66,7 @@ gulp.task('i18nSummernoteEditor:js', function(){
 			filename: "summernote.js"
 		},
 		module: defaultWebpackModuleSetting,
+		externals: externalNodeModules,
 	}, webpack)
 		.pipe(plumber())
 		.pipe(gulp.dest( './fields/i18n_summernote/frontend/' ))
@@ -92,6 +93,7 @@ gulp.task('i18nText:js', function(){
 			filename: "text.js"
 		},
 		module: defaultWebpackModuleSetting,
+		externals: externalNodeModules,
 	}, webpack)
 		.pipe(plumber())
 		.pipe(gulp.dest( './fields/i18n_text/frontend/' ))
@@ -118,6 +120,7 @@ gulp.task('i18nHtmlAttrText:js', function(){
 			filename: "html_attr_text.js"
 		},
 		module: defaultWebpackModuleSetting,
+		externals: externalNodeModules,
 	}, webpack)
 		.pipe(plumber())
 		.pipe(gulp.dest( './fields/i18n_html_attr_text/frontend/' ))
