@@ -10,3 +10,5 @@
 "label:html","HTML",,,,
 "label:text","Plain Text","テキスト",,,
 "label:markdown","Markdown",,,,
+"label:select-language","Select Language","言語を選択",,,
+"label:all","All","すべて",,,

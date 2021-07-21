@@ -145,13 +145,13 @@
                                                                     "editor": "markdown",
                                                                     "langs": {
                                                                         "en": {
-                                                                            "src": "This is one line multilingual multitext."
+                                                                            "src": "This is a one-line multilingual multitext."
                                                                         },
                                                                         "zh-CN": {
-                                                                            "src": "这是一行多语言多文本。"
+                                                                            "src": "这是一个单行多语言多文本。"
                                                                         },
                                                                         "zh-TW": {
-                                                                            "src": "這是一行多語言多文本。"
+                                                                            "src": "這是一個單行多語言多文本。"
                                                                         },
                                                                         "ko": {
                                                                             "src": "이것은 한 줄 다국어 멀티 텍스트입니다."

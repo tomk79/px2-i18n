@@ -1,6 +1,6 @@
 window.BroccoliFieldPx2I18nHtmlAttrText = function(broccoli){
 	var $ = require('jquery');
-	var i18nFieldHelper = new (require('../../_shared/scripts/fieldHelper'))(this, {
+	var i18nFieldHelper = new (require('../../_shared/scripts/fieldHelper'))(broccoli, this, {
 		'mkUiUnit': function($elm, lang, mod){
 			// --------------------------------------
 			// 言語個別の入力欄のUIを生成する

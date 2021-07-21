@@ -1,21 +1,21 @@
 <div class="broccoli-field-px2-i18n">
     {% if mod.subLangs and mod.subLangs.length %}
     <div class="broccoli-field-px2-i18n__sub-lang-selector">
-        <button type="button" class="px2-btn" data-btn="clear-all">すべてリセット</button>
-        <button type="button" class="px2-btn" data-btn="auto-translate-all">すべて自動翻訳</button>
+        <button type="button" class="px2-btn" data-btn="clear-all">{{ lb.get("btn:reset-all") }}</button>
+        <button type="button" class="px2-btn" data-btn="auto-translate-all">{{ lb.get("btn:machine-translate-all") }}</button>
         <select class="px2-input">
-            <option value="">select language...</option>
+            <option value="">{{ lb.get("label:select-language") }} ...</option>
             {% for lang in mod.subLangs %}
-            <option value="{{ lang }}">{{ lang }}</option>
+            <option value="{{ lang }}">{{ langLabels[lang] }}</option>
             {% endfor %}
-            <option value="_all">all</option>
+            <option value="_all">{{ lb.get("label:all") }}</option>
         </select>
     </div>
     {% endif %}
     <div class="broccoli-field-px2-i18n__main-block">
         <div class="broccoli-field-px2-i18n__default-lang">
             {% if mod.defaultLang %}
-            <p>Default Language: <strong>{{ mod.defaultLang }}</strong></p>
+            <p>Default Language: <strong>{{ langLabels[mod.defaultLang] }}</strong></p>
             {% endif %}
             <div class="broccoli-field-px2-i18n__default-lang-body">
                 <div data-lang="editor-default-lang"></div>
@@ -25,9 +25,9 @@
         <div class="broccoli-field-px2-i18n__sub-langs">
             {% for lang in mod.subLangs %}
             <div class="broccoli-field-px2-i18n__sub-langs-body">
-                <p>Language: <strong>{{ lang }}</strong></p>
+                <p>Language: <strong>{{ langLabels[lang] }}</strong></p>
                 <div data-lang="editor-lang-{{ lang }}"></div>
-                <p><button type="button" class="px2-btn" data-btn="auto-translate">自動翻訳</button></p>
+                <p><button type="button" class="px2-btn" data-btn="auto-translate">{{ lb.get("btn:machine-translation") }}</button></p>
             </div>
             {% endfor %}
         </div>

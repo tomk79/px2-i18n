@@ -196,6 +196,10 @@ $conf->funcs->before_content = array(
 
 ## 更新履歴 - Change log
 
+### tomk79/px2-i18n v0.0.1 (リリース日未定)
+
+- 編集画面を多言語対応(英語、中文、韓国語)した。
+
 ### tomk79/px2-i18n v0.0.1 (2021年7月18日)
 
 - 初版リリース。

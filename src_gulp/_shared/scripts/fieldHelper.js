@@ -1,4 +1,4 @@
-module.exports = function( field, initOptions ){
+module.exports = function( broccoli, field, initOptions ){
 	initOptions = initOptions || {};
 	initOptions.mkUiUnit = initOptions.mkUiUnit || function($elm, lang, mod){
 		return;
@@ -27,6 +27,13 @@ module.exports = function( field, initOptions ){
 		text = text.split(/\>/g).join('&gt;');
 		text = text.split(/\"/g).join('&quot;');
 		return text;
+	}
+
+	/**
+	 * LangBank
+	 */
+	this.lb = function(){
+		return lb;
 	}
 
 	/**
@@ -68,17 +75,10 @@ module.exports = function( field, initOptions ){
 	this.mkEditor = function( mod, data, elm, callback ){
 		var $elm = $(elm);
 		var $mainBlock;
+		var langLabels = {};
 
 		it79.fnc({}, [
 			function(it1){
-				lb = new LangBank(langCsv, function(){
-					lb.setLang('en');
-					console.log( lb.get('lang:ja') );
-					it1.next();
-				});
-			},
-			function(it1){
-
 				if(!data || typeof(data) != typeof({})){
 					data = this.normalizeData(data);
 				}
@@ -93,12 +93,34 @@ module.exports = function( field, initOptions ){
 					data.langs = {};
 				}
 
+				it1.next();
+			},
+			function(it1){
+				lb = new LangBank(langCsv, function(){
+					lb.setLang( broccoli.options.lang );
+					it1.next();
+				});
+			},
+			function(it1){
+				langLabels[mod.defaultLang] = lb.get( 'lang:'+mod.defaultLang );
+				for( var idx in mod.subLangs ){
+					var lang = mod.subLangs[idx];
+					langLabels[lang] = lb.get( 'lang:'+lang );
+					if( langLabels[lang] == '---' ){
+						langLabels[lang] = lang;
+					}
+				}
+				it1.next();
+			},
+			function(it1){
 
 				// --------------------------------------
 				// デフォルト言語
 				$elm.append( templates.frame({
 					"mod": mod,
 					"data": data,
+					"lb": lb,
+					"langLabels": langLabels,
 				}) );
 				initOptions.mkUiUnit($elm.find('[data-lang=editor-default-lang]'), null, mod);
 				initOptions.updateVal($elm.find('[data-lang=editor-default-lang]'), null, mod, {

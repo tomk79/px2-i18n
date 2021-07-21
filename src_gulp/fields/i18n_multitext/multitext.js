@@ -11,7 +11,7 @@ window.BroccoliFieldPx2I18nMultitext = function(broccoli){
 	var aceEditor;
 	var aceEditorLangs = {};
 
-	var i18nFieldHelper = new (require('../../_shared/scripts/fieldHelper'))(this, {
+	var i18nFieldHelper = new (require('../../_shared/scripts/fieldHelper'))(broccoli, this, {
 		'mkUiUnit': function($elm, lang, mod){
 			// --------------------------------------
 			// 言語個別の入力欄のUIを生成する
@@ -102,9 +102,9 @@ window.BroccoliFieldPx2I18nMultitext = function(broccoli){
 			if( !lang ){
 				$elm
 					.append( $('<p>')
-						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+i18nFieldHelper.h(fieldName)+'" value="" /> HTML</label></span>'))
-						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+i18nFieldHelper.h(fieldName)+'" value="text" /> テキスト</label></span>'))
-						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+i18nFieldHelper.h(fieldName)+'" value="markdown" /> Markdown</label></span>'))
+						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+i18nFieldHelper.h(fieldName)+'" value="" /> '+i18nFieldHelper.h( i18nFieldHelper.lb().get('label:html') )+'</label></span>'))
+						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+i18nFieldHelper.h(fieldName)+'" value="text" /> '+i18nFieldHelper.h( i18nFieldHelper.lb().get('label:text') )+'</label></span>'))
+						.append($('<span style="margin-right: 10px;"><label><input type="radio" name="editor-'+i18nFieldHelper.h(fieldName)+'" value="markdown" /> '+i18nFieldHelper.h( i18nFieldHelper.lb().get('label:markdown') )+'</label></span>'))
 					)
 				;
 
