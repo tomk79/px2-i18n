@@ -4,8 +4,16 @@ class loader {
 
 	/**
 	 * $site オブジェクトを生成して登録する
+	 *
+	 * @param object $px Picklesオブジェクト
+	 * @param object $options プラグイン設定
 	 */
-	public static function site($px, $json){
+	public static function site( $px = null, $options = null ){
+
+		if( count(func_get_args()) <= 1 ){
+			return __CLASS__.'::'.__FUNCTION__.'('.( is_array($px) ? json_encode($px) : '' ).')';
+		}
+
 		$is_enable_sitemap = $px->is_path_enable_sitemap( $px->req()->get_request_file_path() );
 		if( !$is_enable_sitemap ){
 			return;

@@ -260,7 +260,7 @@ return call_user_func( function(){
 		)).')' ,
 
 		// カスタムサイトマップオブジェクトを生成して登録する
-		'tomk79\\pickles2\\px2I18n\\loader::site()',
+		tomk79\pickles2\px2I18n\loader::site(),
 	);
 
 	$devices = array();

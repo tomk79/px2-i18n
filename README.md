@@ -43,7 +43,7 @@ $conf->funcs->before_sitemap = array(
     /* 中略 */
 
     // カスタムサイトマップオブジェクトを生成して登録する
-    'tomk79\\pickles2\\px2I18n\\loader::site()',
+    tomk79\pickles2\px2I18n\loader::site(),
 );
 ```
 
@@ -199,6 +199,7 @@ $conf->funcs->before_content = array(
 ### tomk79/px2-i18n v0.0.1 (リリース日未定)
 
 - 編集画面を多言語対応(英語、中文、韓国語)した。
+- より直接的な表現でプラグイン設定できるようになった。
 
 ### tomk79/px2-i18n v0.0.1 (2021年7月18日)
 
