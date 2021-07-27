@@ -10,6 +10,7 @@
             "php ./vendor/phpunit/phpunit/phpunit"
         ]
     } ,
+    "minimum-stability": "dev",
     "repositories": [],
     "require": {
         "php": ">=5.4.0",
