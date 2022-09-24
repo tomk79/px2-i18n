@@ -9,6 +9,9 @@ Thumbs.db
 composer.phar
 composer.lock
 
+# phpunit
+.phpunit.result.cache
+
 # pickles2
 tests/testdata/standard/px-files/_sys/ram/
 !tests/testdata/standard/px-files/_sys/ram/applock/.gitkeep
