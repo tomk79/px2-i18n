@@ -64,13 +64,13 @@ class site_multilang extends \picklesFramework2\site{
 		if( count($args) >= 2 && is_string($page_info) ){
 			// $key を指定して引いた場合
 			$page_info_lang = parent::get_page_info( $path, $key.'('.$this->px->lang().')' );
-			if( strlen($page_info_lang) ){
+			if( strlen(''.$page_info_lang) ){
 				return $page_info_lang;
 			}
 
 			// title派生に関する特別な処理
 			$title_lang = parent::get_page_info( $path, 'title('.$this->px->lang().')' );
-			if( strlen($title_lang) ){
+			if( strlen(''.$title_lang) ){
 				switch( $key ){
 					case 'title_h1':
 					case 'title_label':
