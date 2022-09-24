@@ -16,7 +16,7 @@ module.exports = function( broccoli, field, initOptions ){
 	};
 	const LangBank = require('langbank');
 	let lb;
-	const langCsv = require('../languages/language.csv')();
+	const langCsv = require('../languages/language.csv');
 
 
 	/**
