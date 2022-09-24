@@ -12,6 +12,9 @@ composer.lock
 # phpunit
 .phpunit.result.cache
 
+# dotenv
+.env
+
 # pickles2
 tests/testdata/standard/px-files/_sys/ram/
 !tests/testdata/standard/px-files/_sys/ram/applock/.gitkeep
