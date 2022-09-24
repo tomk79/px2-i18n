@@ -5,9 +5,18 @@
         "pickles2"
     ],
     "license": "MIT",
-    "scripts":{
+    "config": {
+        "process-timeout": 0
+    },
+	"scripts": {
+		"start": [
+			"@php ./tests/testdata/standard/src_px2/.px_execute.php \"/?PX=serve&S=localhost:8080\""
+		],
+		"start-pub": [
+			"@php ./tests/testdata/standard/src_px2/.px_execute.php \"/?PX=serve.pub&S=localhost:8081\""
+		],
         "test": [
-            "php ./vendor/phpunit/phpunit/phpunit"
+            "@php ./vendor/phpunit/phpunit/phpunit"
         ]
     } ,
     "minimum-stability": "dev",

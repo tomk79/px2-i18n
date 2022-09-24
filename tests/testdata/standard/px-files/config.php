@@ -219,7 +219,7 @@ return call_user_func( function(){
 	 * - または、Pickles 2 上に構築したウェブアプリケーションをサービスとして公開する場合、
 	 *   この値を 0 に設定し、PXコマンド機能を無効にしてください。(この場合でも、CLIからの実行は許可されます)
 	 */
-	$conf->allow_pxcommands = 0;
+	$conf->allow_pxcommands = 1;
 
 
 
@@ -233,6 +233,11 @@ return call_user_func( function(){
 	 * サイトマップ読み込みの前に実行するプラグインを設定します。
 	 */
 	$conf->funcs->before_sitemap = array(
+		// px2-clover
+		\tomk79\pickles2\px2clover\register::clover(array(
+			"protect_preview" => true, // プレビューに認証を要求するか？
+		)),
+
 		// PX=clearcache
 		'picklesFramework2\commands\clearcache::register' ,
 
@@ -266,6 +271,10 @@ return call_user_func( function(){
 
 		// カスタムサイトマップオブジェクトを生成して登録する
 		tomk79\pickles2\px2I18n\loader::site(),
+
+		// px2-serve
+		\tomk79\pickles2\px2serve\serve::register(),
+
 	);
 
 	$devices = array();
