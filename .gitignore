@@ -30,3 +30,6 @@ package-lock.json
 
 # Google Cloud
 google-cloud-credentials.json
+
+# laravel-mix
+mix-manifest.json

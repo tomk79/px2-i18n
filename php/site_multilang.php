@@ -36,15 +36,15 @@ class site_multilang extends \picklesFramework2\site{
 			// $key の指定なしで引いた場合
 			foreach( $page_info as $key=>$val ){
 				$lang_key = $key.'('.$this->px->lang().')';
-				if( array_key_exists($lang_key, $page_info) && strlen($page_info[$lang_key]) ){
+				if( array_key_exists($lang_key, $page_info) && strlen(''.$page_info[$lang_key]) ){
 					$page_info[$key] = $page_info[$lang_key];
 					continue;
 				}
 
-				if( isset($page_info['title('.$this->px->lang().')']) && strlen($page_info['title('.$this->px->lang().')']) ){
+				if( isset($page_info['title('.$this->px->lang().')']) && strlen(''.$page_info['title('.$this->px->lang().')']) ){
 					// title派生に関する特別な処理
 					$title_lang = $page_info['title('.$this->px->lang().')'];
-					if( strlen($title_lang) ){
+					if( strlen(''.$title_lang) ){
 						switch( $key ){
 							case 'title_h1':
 							case 'title_label':
