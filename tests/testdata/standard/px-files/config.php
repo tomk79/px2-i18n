@@ -547,8 +547,10 @@ return call_user_func( function(){
 				'file' => array(
 					'summernote.css',
 					'summernote.js',
-					"summernote/summernote.min.css",
-					"summernote/summernote.min.js",
+					"bootstrap4/css/bootstrap.css",
+					"bootstrap4/js/bootstrap.bundle.js",
+					"summernote/summernote-bs4.css",
+					"summernote/summernote-bs4.js",
 				),
 				'function' => 'window.BroccoliFieldPx2I18nSummernote'
 			),
