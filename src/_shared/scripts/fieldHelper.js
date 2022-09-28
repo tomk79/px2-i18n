@@ -9,7 +9,7 @@ module.exports = function( broccoli, field, initOptions ){
 	const _this = this;
 	const $ = require('jquery');
 	const it79 = require('iterate79');
-	require('px2style/px2style/px2style.js');
+	require('px2style/dist/px2style.js');
 	const px2style = window.px2style;
 	const templates = {
 		'frame': require('..//templates/frame.twig'),
