@@ -498,7 +498,7 @@
                                     "modId": "std-document:basics/text",
                                     "fields": {
                                         "main": {
-                                            "src": "<h3>パブリッシュします</h3>\n<p>サイトができあがったら、そのまま静的なHTMLに書き出すことができます。<br>\n次のコマンドで、パブリッシュを実行します。</p>\n<pre><code>$ php ./.px_execute.php /?PX=publish.run\n</code></pre>\n<p>しばらくすると、次のパスに、静的なHTMLファイルが生成されます。</p>\n<pre><code>./px-files/dist/\n</code></pre>\n",
+                                            "src": "<h3>パブリッシュします</h3>\n<p>サイトができあがったら、そのまま静的なHTMLに書き出すことができます。<br>\n次のコマンドで、パブリッシュを実行します。</p>\n<pre><code>$ php ./.px_execute.php /?PX=publish.run\n</code></pre>\n<p>しばらくすると、次のパスに、静的なHTMLファイルが生成されます。</p>\n<pre><code>./px-files/dist/\n</code></pre>\n\n<p><?= htmlspecialchars( $px->lb->get('lang_name') ); ?></p>",
                                             "editor": "",
                                             "langs": {
                                                 "en": "<h3>Publish</h3><p>Once your site is complete, you can export it to static HTML as is.<br>Publish with the following command:</p><pre><code>$ php ./.px_execute.php /?PX=publish.run\n</code></pre><p>After a while, a static HTML file will be generated in the next path.</p><pre><code>./px-files/dist/</code></pre>"

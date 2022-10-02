@@ -272,6 +272,11 @@ return call_user_func( function(){
 		// カスタムサイトマップオブジェクトを生成して登録する
 		tomk79\pickles2\px2I18n\loader::site(),
 
+		// LangBank を `$px->lb` に登録する
+		tomk79\pickles2\px2I18n\loader::langbank( [
+			"path_csv" => __DIR__."/language.csv",
+		] ),
+
 		// px2-serve
 		\tomk79\pickles2\px2serve\serve::register(),
 

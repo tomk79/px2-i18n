@@ -44,6 +44,11 @@ $conf->funcs->before_sitemap = array(
 
     // カスタムサイトマップオブジェクトを生成して登録する
     tomk79\pickles2\px2I18n\loader::site(),
+
+    // LangBank を `$px->lb` に登録する
+    tomk79\pickles2\px2I18n\loader::langbank( [
+		"path_csv" => "/realpath/to/language.csv",
+	] ),
 );
 ```
 
@@ -201,6 +206,7 @@ $conf->funcs->before_content = array(
 - サポートするPHPのバージョンを `>=7.3.0` に変更。
 - 編集画面を多言語対応(英語、中文、韓国語)した。
 - より直接的な表現でプラグイン設定できるようになった。
+- `langbank` のロード機能を追加した。
 
 ### tomk79/px2-i18n v0.0.1 (2021年7月18日)
 

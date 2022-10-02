@@ -24,4 +24,22 @@ class loader {
 		return;
 	}
 
+	/**
+	 * $lb オブジェクトを生成して登録する
+	 *
+	 * @param object $px Picklesオブジェクト
+	 * @param object $options プラグイン設定
+	 */
+	public static function langbank( $px = null, $options = null ){
+
+		if( count(func_get_args()) <= 1 ){
+			return __CLASS__.'::'.__FUNCTION__.'('.( is_array($px) ? json_encode($px) : '' ).')';
+		}
+
+		$lb = new \tomk79\LangBank($options->path_csv);
+		$lb->setLang( $px->lang() );
+		$px->lb = $lb;
+
+		return;
+	}
 }

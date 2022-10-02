@@ -23,7 +23,8 @@
     "repositories": [],
     "require": {
         "php": ">=7.3.0",
-        "google/cloud-translate": "^1.10"
+        "google/cloud-translate": "^1.10",
+        "tomk79/langbank": "~0.2"
     },
     "require-dev": {
         "phpunit/phpunit": "~9.5",
